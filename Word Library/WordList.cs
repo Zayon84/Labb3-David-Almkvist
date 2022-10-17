@@ -29,7 +29,9 @@ namespace Word_Library
         {
             //Returnerar array med namn på alla listor som finns lagrade(utan filändelsen). 
             string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            //Console.WriteLine(path);
             string fullPath = Path.Combine(path, "Labb3");
+            //Console.WriteLine(fullPath);
             string[] files = Directory.GetFiles(fullPath, "*.dat");
 
             string[] lists = files.Select(file => Path.GetFileNameWithoutExtension(file)).ToArray();
@@ -39,7 +41,25 @@ namespace Word_Library
         public static WordList LoadList(string name)
         {
             // Laddar in ordlistan(name anges utan filändelse) och returnerar som WordList.
-            return null;
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            string fullPath = Path.Combine(path, "Labb3",name + ".dat");
+            Console.WriteLine("File in path " + fullPath);
+
+
+            using (StreamReader reader = new StreamReader(fullPath))
+            {
+                string[] languages = reader.ReadLine().Trim(';').Split(";");
+
+                WordList currentList = new WordList(name, languages);
+
+                string temp;
+                while (!reader.EndOfStream)
+                {
+                    string[] words = reader.ReadLine().Trim(';').Split(";");
+                    currentList.Add(words);
+                }
+                return currentList;
+            }
         }
 
         public void Save()
@@ -82,6 +102,12 @@ namespace Word_Library
         {
             //sortByTranslation = Vilket språk listan ska sorteras på.
             //showTranslations = Callback som anropas för varje ord i listan.
+            List<Word> sortedList = myWordsList.OrderBy(w => w.Translations[sortByTranslation]).ToList();
+
+            foreach (Word currentWord in sortedList)
+            {
+                showTranslations.Invoke(currentWord.Translations);
+            }
         }
 
         public Word GetWordToPractice()
