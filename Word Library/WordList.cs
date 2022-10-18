@@ -45,7 +45,7 @@ namespace Word_Library
             // Laddar in ordlistan(name anges utan filändelse) och returnerar som WordList.
             string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             string fullPath = Path.Combine(path, "Labb3",name + ".dat");
-            Console.WriteLine("File in path " + fullPath);
+            //Console.WriteLine("File in path " + fullPath);
 
 
             using (StreamReader reader = new StreamReader(fullPath))
