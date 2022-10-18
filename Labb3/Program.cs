@@ -21,12 +21,12 @@ myWordList.Add("Moon", "Måne", "Luna");
 //Console.WriteLine(myWord);
 //Console.WriteLine(myWord2);
 
-Console.WriteLine("- Print out myWordList Test");
+Console.WriteLine(" - Print out myWordList Test");
 myWordList.List(2, PrintTranslations );
 
 
 
-Console.WriteLine("\n- Getlists name in folder Test:");
+Console.WriteLine("\n - Getlists name in folder Test:");
 foreach (String name in WordList.GetLists())
 {
     Console.WriteLine(name);
@@ -39,7 +39,32 @@ Console.WriteLine("\n- Load in file Test:");
 WordList testLoadList = WordList.LoadList("lang3");
 testLoadList.List(0, PrintTranslations);
 
+Console.WriteLine($"\n - SAVE TEST INFO");
+myWordList.Save();
 
+
+Console.WriteLine($"\n - Get word TEST INFO");
+
+GuessTheWORD();
+
+
+
+
+
+void GuessTheWORD()
+{
+    Word wordToPractice = myWordList.GetWordToPractice();
+
+    Console.WriteLine(wordToPractice.Translations[wordToPractice.FromLanguage]);
+    Console.WriteLine(wordToPractice.Translations[wordToPractice.ToLanguage]);
+    Console.WriteLine("Controll check ...TO NOT READ ABOVE NO CHEATING !!!\n");
+
+    Console.WriteLine($"GUESS THE WORD !  (from{myWordList.Languages[wordToPractice.FromLanguage]} to {myWordList.Languages[wordToPractice.ToLanguage]} )");
+    Console.WriteLine($"How do you type {wordToPractice.Translations[wordToPractice.FromLanguage]} in {myWordList.Languages[wordToPractice.ToLanguage]}?");
+    string inputString = Console.ReadLine();
+    string check = (inputString == wordToPractice.Translations[wordToPractice.ToLanguage]) ? "CORECT" : "WRONG";
+    Console.WriteLine($"Your Anser is: {check } !");
+}
 
 void PrintTranslations(string[] translations)
 {
