@@ -2,6 +2,8 @@
 // David Almvkvist - Oct 2022
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
+using System.Drawing;
+using System.Numerics;
 using System.Runtime.Intrinsics.X86;
 using System.Xml.Linq;
 using Word_Library;
@@ -13,11 +15,50 @@ WordList myWordList = new WordList("EngSweSpa", "English", "Swedish", "Spanish")
 WordList testLoadList = WordList.LoadList("lang3");
 TestOfWordList(false);
 
+// THE CONSOLE 
 BasePrint();
+CheckArguments();
+
+
+void CheckArguments()
+{
+    string input = args[0];
+    input switch
+    {
+        "-lists" => RunLists(),
+        "-new" => RunNew(),
+        _ => RunWTF()
+    };
 
 
 
+    //  Shape myShape;
+    //  ShapeForm myShapeForm = (ShapeForm)rand.Next(Enum.GetNames(typeof(ShapeForm)).Length);
 
+    //  myShape = myShapeForm switch
+    //  {
+    //    ShapeForm.Circle => new Circle(new Vector2(RandomizeFloat(), RandomizeFloat()), RandomizeFloat()),
+    //    ShapeForm.Rectangle => new Rectangle(new Vector2(RandomizeFloat(), RandomizeFloat()), new Vector2(RandomizeFloat(), RandomizeFloat()))
+
+    //  };
+
+}
+
+void RunLists() 
+{
+    Console.WriteLine("Input found: -Lists");
+};
+void RunNew()
+{
+    Console.WriteLine("Input found: -new");
+};
+
+void RunWTF()
+{
+    Console.WriteLine("What did you want with that ?");
+    Console.WriteLine("Input does not match any known command!");
+    BasePrint();
+}
 
 void BasePrint()
 {

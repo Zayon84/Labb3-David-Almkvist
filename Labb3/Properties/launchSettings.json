@@ -2,7 +2,7 @@
   "profiles": {
     "Labb3": {
       "commandName": "Project",
-      "commandLineArgs": "-"
+      "commandLineArgs": "-Lists"
     }
   }
 }

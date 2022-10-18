@@ -54,7 +54,6 @@ namespace Word_Library
 
                 WordList currentList = new WordList(name, languages);
 
-                string temp;
                 while (!reader.EndOfStream)
                 {
                     string[] words = reader.ReadLine().Split(";", StringSplitOptions.RemoveEmptyEntries);
