@@ -2,7 +2,7 @@
   "profiles": {
     "Labb3": {
       "commandName": "Project",
-      "commandLineArgs": "-Lists\r\n-New\r\n-Add"
+      "commandLineArgs": "-Count\r\nen-sv\r\n-Lists\r\n-New\r\n-Add"
     }
   }
 }

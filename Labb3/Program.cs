@@ -20,6 +20,7 @@ WordList myWordList = new WordList("EngSweSpa", "English", "Swedish", "Spanish")
 WordList testLoadList = WordList.LoadList("lang3");
 TestOfWordList(false);
 TEST_Args_Stuff(true);
+LoadInDefaultList();            /// TESTING Functions   // TODO: Remove when done
 
 // THE CONSOLE 
 BasePrint();
@@ -46,7 +47,7 @@ void TEST_Args_Stuff(bool testingArgs)
 void CheckArguments()
 {
     string input = args[0].ToLower();
-    Console.WriteLine($"Our args[0] is : {input}");
+    Console.WriteLine($"_CHECK_ Our args[0] is : {input}");
 
     (input switch
     {
@@ -54,8 +55,8 @@ void CheckArguments()
         "-new"      => RunNew,
         "-remove"   => RunRemove,
         "-words"    => RunWords,
-        "-count"    => RunNew,
-        "-practice" => RunNew,
+        "-count"    => RunCount,
+        "-practice" => RunPractice,
         _           => RunWTF
     })();
 }
@@ -78,6 +79,12 @@ void RunNew()
     //-new < list name > < language 1 > < language 2 > .. < langauge n >
     //Skapar(och sparar) en ny lista med angivet namn och så många språk som
     //angivits.Går direkt in i loopen för att addera nya ord(se - add).
+
+    //string parameterString =
+    //WordList newList = new WordList();
+
+
+    //WordList myWordList = new WordList("EngSweSpa", "English", "Swedish", "Spanish");
 
 };
 void RunAdd()
@@ -108,11 +115,14 @@ void RunWords()
 }
 void RunCount()
 {
-    Console.WriteLine($"Input found: -count = {args[0]}");
+    Console.WriteLine($"_CHECK_ Input found: -count = {args[0]}");
     // -count <listname> 
     // Skriver ut hur många ord det finns i namngiven lista. 
 
+    string currentListName = args[1];
+    WordList currentWordList = WordList.LoadList(currentListName);
 
+    Console.WriteLine($" == -count == The list \"{currentWordList.Name}\" has {currentWordList.Count()} words");
 }
 void RunPractice()
 {
