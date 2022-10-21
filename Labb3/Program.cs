@@ -87,8 +87,6 @@ void RunNew()
     WordList newList = new WordList(args[1], args.Skip(2).ToArray());
     Console.WriteLine($"-- new list created!  called = {args[1]} --");
 
-
-
     newList.Save();
     Console.WriteLine($"-- List = {args[1]} SAVED!!! : Now calling RunAdd --");
 
@@ -104,9 +102,11 @@ void RunAdd()
     //Frågar användaren efter ett nytt ord(på listans första språk), och frågar därefter i
     //tur och ordning efter översättningar till alla språk i listan. Sedan fortsätter den att
     //fråga efter nya ord tills användaren avbryter genom att mata in en tom rad.
+    TEST_Args_Stuff(true);
+    string currentListName = args[1];
+    WordList currentWordList = WordList.LoadList(currentListName);
 
-    Console.WriteLine();
-
+    //currentWordList.Add();
     //string currentListName = args[1];
     //WordList currentWordList = WordList.LoadList(currentListName);                  // use this type ?
 
@@ -118,7 +118,7 @@ void RunRemove()
     //Raderar angivna ord från namngiven lista och språk. 
     string currentListName = args[1];
     WordList currentWordList = WordList.LoadList(currentListName);
-    Console.WriteLine($"\n == We are trying to removing the word {args[3]}");
+    Console.WriteLine($"\n == We are trying to removing the word {args[3]}");                       // TODO: need to be able to handle multiple args
     if (currentWordList.Remove(int.Parse(args[2]), args[3]))
     {
         Console.WriteLine("WE FOUND THE WORD!");

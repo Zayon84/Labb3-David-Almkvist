@@ -2,7 +2,7 @@
   "profiles": {
     "Labb3": {
       "commandName": "Project",
-      "commandLineArgs": "-remove EngSweSpa 2 Hola"
+      "commandLineArgs": "-new\r\nwhooohooo\r\nsvenska\r\nspanska\r\nisländska\r\nengelska\r\narabiska\r\n"
     }
   }
 }
