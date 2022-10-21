@@ -14,44 +14,81 @@ Console.WriteLine("\t\tLabb3 – Utveckla en applikation för att träna glosor.
 WordList myWordList = new WordList("EngSweSpa", "English", "Swedish", "Spanish");
 WordList testLoadList = WordList.LoadList("lang3");
 TestOfWordList(false);
+TEST_Args_Stuff(true);
 
 // THE CONSOLE 
 BasePrint();
 CheckArguments();
 
 
+
+void TEST_Args_Stuff(bool testingArgs)
+{
+    if (true)
+    {
+        Console.WriteLine("\nTesting Args stuff!");
+        Console.WriteLine($"We have {args.Length} args at this point");
+        for (int i = 0; i < args.Length; i++)
+        {
+            Console.WriteLine($"Args nr{i} is = {args[i]}");
+        }
+
+        Console.WriteLine();
+    }
+
+}
+
+
 void CheckArguments()
 {
-    string input = args[0];
-    input switch
+    string input = args[0].ToLower();
+    Console.WriteLine($"Our args[0] is : {input}");
+
+    (input switch
     {
-        "-lists" => RunLists(),
-        "-new" => RunNew(),
-        _ => RunWTF()
-    };
-
-
-
-    //  Shape myShape;
-    //  ShapeForm myShapeForm = (ShapeForm)rand.Next(Enum.GetNames(typeof(ShapeForm)).Length);
-
-    //  myShape = myShapeForm switch
-    //  {
-    //    ShapeForm.Circle => new Circle(new Vector2(RandomizeFloat(), RandomizeFloat()), RandomizeFloat()),
-    //    ShapeForm.Rectangle => new Rectangle(new Vector2(RandomizeFloat(), RandomizeFloat()), new Vector2(RandomizeFloat(), RandomizeFloat()))
-
-    //  };
-
+        "-lists"    => (Action) RunLists,
+        "-new"      => RunNew,
+        "-remove"   => RunRemove,
+        "-words"    => RunWords,
+        "-count"    => RunNew,
+        "-practice" => RunNew,
+        _           => RunWTF
+    })();
 }
 
 void RunLists() 
 {
-    Console.WriteLine("Input found: -Lists");
+    Console.WriteLine($"Input found: -lists = {args[0]}");
 };
 void RunNew()
 {
-    Console.WriteLine("Input found: -new");
+    Console.WriteLine($"Input found: -new = {args[0]}");
 };
+void RunAdd()
+{
+    Console.WriteLine($"Input found: -add = {args[0]}");
+
+}
+void RunRemove()
+{
+    Console.WriteLine($"Input found: -remove = {args[0]}");
+
+}
+void RunWords()
+{
+    Console.WriteLine($"Input found: -words = {args[0]}");
+
+}
+void RunCount()
+{
+    Console.WriteLine($"Input found: -count = {args[0]}");
+
+}
+void RunPractice()
+{
+    Console.WriteLine($"Input found: -practice = {args[0]}");
+
+}
 
 void RunWTF()
 {
@@ -78,10 +115,7 @@ void TestOfWordList(bool RunThisTest)
     if (RunThisTest)
     {
         // Load in some values to myWordList
-        myWordList.Add("Hi", "Hej", "Hola");
-        myWordList.Add("World", "Värld", "Mundo");
-        myWordList.Add("Car", "Bil", "Coche");
-        myWordList.Add("Moon", "Måne", "Luna");
+        LoadInDefaultList();
 
         // Test Print out the words in myWordList
         Console.WriteLine(" - Print out myWordList Test");
@@ -109,6 +143,13 @@ void TestOfWordList(bool RunThisTest)
 
 }
 
+void LoadInDefaultList()
+{
+    myWordList.Add("Hi", "Hej", "Hola");
+    myWordList.Add("World", "Värld", "Mundo");
+    myWordList.Add("Car", "Bil", "Coche");
+    myWordList.Add("Moon", "Måne", "Luna");
+}
 
 void GuessTheWORD()
 {
