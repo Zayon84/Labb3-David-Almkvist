@@ -1,10 +1,15 @@
 ﻿// C# Labb3 – Utveckla en applikation för att träna glosor. 
 // David Almvkvist - Oct 2022
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Numerics;
+using System.Reflection.Metadata;
+using System.Runtime.ConstrainedExecution;
 using System.Runtime.Intrinsics.X86;
+using System.Security.Cryptography;
 using System.Xml.Linq;
 using Word_Library;
 
@@ -19,7 +24,6 @@ TEST_Args_Stuff(true);
 // THE CONSOLE 
 BasePrint();
 CheckArguments();
-
 
 
 void TEST_Args_Stuff(bool testingArgs)
@@ -59,34 +63,66 @@ void CheckArguments()
 void RunLists() 
 {
     Console.WriteLine($"Input found: -lists = {args[0]}");
+    // Listar namnen på alla ordlistor från mappen i appdata/local/”mapp med .dat filer”
+    Console.WriteLine($" == List availeble are :");
+    int indexCount = 0;
+    foreach (String name in WordList.GetLists())
+    {
+        indexCount++;
+        Console.WriteLine($"{indexCount}. {name}");
+    }
 };
 void RunNew()
 {
     Console.WriteLine($"Input found: -new = {args[0]}");
+    //-new < list name > < language 1 > < language 2 > .. < langauge n >
+    //Skapar(och sparar) en ny lista med angivet namn och så många språk som
+    //angivits.Går direkt in i loopen för att addera nya ord(se - add).
+
 };
 void RunAdd()
 {
     Console.WriteLine($"Input found: -add = {args[0]}");
+    // -add <list name> 
+    //Frågar användaren efter ett nytt ord(på listans första språk), och frågar därefter i
+    //tur och ordning efter översättningar till alla språk i listan. Sedan fortsätter den att
+    //fråga efter nya ord tills användaren avbryter genom att mata in en tom rad.
 
 }
 void RunRemove()
 {
     Console.WriteLine($"Input found: -remove = {args[0]}");
+    //-remove <list name> <language> <word 1> <word 2> .. <word n> 
+    //Raderar angivna ord från namngiven lista och språk. 
+
 
 }
 void RunWords()
 {
     Console.WriteLine($"Input found: -words = {args[0]}");
+    // -words <listname> <sortByLanguage> 
+    //Listar ord(alla språk) från angiven lista.Om man anger språk sorteras listan efter
+    //det, annars sortera efter första språket. 
+
 
 }
 void RunCount()
 {
     Console.WriteLine($"Input found: -count = {args[0]}");
+    // -count <listname> 
+    // Skriver ut hur många ord det finns i namngiven lista. 
+
 
 }
 void RunPractice()
 {
     Console.WriteLine($"Input found: -practice = {args[0]}");
+    //-practice < listname >
+    //Ber användaren översätta ett slumpvis valt ord ur listan från ett slumpvis valt
+    //språk till ett annat. Skriver ut om det var rätt eller fel, och fortsätter fråga efter
+    //ord tills användaren lämnar en tom inmatning. Då skrivs antal övade ord ut, samt
+    //hur stor andel av orden man haft rätt på.
+
 
 }
 
