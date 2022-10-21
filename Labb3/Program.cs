@@ -118,7 +118,16 @@ void RunRemove()
     //Raderar angivna ord från namngiven lista och språk. 
     string currentListName = args[1];
     WordList currentWordList = WordList.LoadList(currentListName);
-    Console.WriteLine($"\n == We are removing  ");
+    Console.WriteLine($"\n == We are trying to removing the word {args[3]}");
+    if (currentWordList.Remove(int.Parse(args[2]), args[3]))
+    {
+        Console.WriteLine("WE FOUND THE WORD!");
+        currentWordList.Save();
+    }
+    else
+    {
+        Console.WriteLine("WE didn´t find it :(");
+    }
 
 }
 void RunWords()
