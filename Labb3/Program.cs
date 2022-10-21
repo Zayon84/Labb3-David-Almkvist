@@ -31,7 +31,7 @@ void TEST_Args_Stuff(bool testingArgs)
 {
     if (true)
     {
-        Console.WriteLine("\nTesting Args stuff!");
+        Console.WriteLine("\n_CHECK_ Testing Args stuff!");
         Console.WriteLine($"We have {args.Length} args at this point");
         for (int i = 0; i < args.Length; i++)
         {
@@ -63,9 +63,9 @@ void CheckArguments()
 
 void RunLists() 
 {
-    Console.WriteLine($"Input found: -lists = {args[0]}");
+    Console.WriteLine($"_CHECK_ Input found: -lists = {args[0]}");
     // Listar namnen på alla ordlistor från mappen i appdata/local/”mapp med .dat filer”
-    Console.WriteLine($" == List availeble are :");
+    Console.WriteLine($"\n == Available List are:");
     int indexCount = 0;
     foreach (String name in WordList.GetLists())
     {
@@ -75,41 +75,65 @@ void RunLists()
 };
 void RunNew()
 {
-    Console.WriteLine($"Input found: -new = {args[0]}");
+    Console.WriteLine($"_CHECK_ Input found: -new = {args[0]}");
     //-new < list name > < language 1 > < language 2 > .. < langauge n >
     //Skapar(och sparar) en ny lista med angivet namn och så många språk som
-    //angivits.Går direkt in i loopen för att addera nya ord(se - add).
+    //angivits.Går direkt in i loopen för att addera nya ord(se - add). 
 
-    //string parameterString =
-    //WordList newList = new WordList();
+    //string myParameterString = $"\"{args[1]}\", \"{args[2]}\",\"{args[3]}\"  ";                  //   \"{args[2]}\"
+    //WordList newList = new WordList(myParameterString.ToString());
 
+    //WordList newList = new WordList(args[1], args[2], args[3]);                   // WORKING !
+    WordList newList = new WordList(args[1], args.Skip(2).ToArray());
+    Console.WriteLine($"-- new list created!  called = {args[1]} --");
+
+
+
+    newList.Save();
+    Console.WriteLine($"-- List = {args[1]} SAVED!!! : Now calling RunAdd --");
+
+    RunAdd();
 
     //WordList myWordList = new WordList("EngSweSpa", "English", "Swedish", "Spanish");
 
 };
 void RunAdd()
 {
-    Console.WriteLine($"Input found: -add = {args[0]}");
+    Console.WriteLine($"_CHECK_ Input found: -add = {args[0]}");
     // -add <list name> 
     //Frågar användaren efter ett nytt ord(på listans första språk), och frågar därefter i
     //tur och ordning efter översättningar till alla språk i listan. Sedan fortsätter den att
     //fråga efter nya ord tills användaren avbryter genom att mata in en tom rad.
 
+    Console.WriteLine();
+
+    //string currentListName = args[1];
+    //WordList currentWordList = WordList.LoadList(currentListName);                  // use this type ?
+
 }
 void RunRemove()
 {
-    Console.WriteLine($"Input found: -remove = {args[0]}");
+    Console.WriteLine($"_CHECK_ Input found: -remove = {args[0]}");
     //-remove <list name> <language> <word 1> <word 2> .. <word n> 
     //Raderar angivna ord från namngiven lista och språk. 
-
+    string currentListName = args[1];
+    WordList currentWordList = WordList.LoadList(currentListName);
+    Console.WriteLine($"\n == We are removing  ");
 
 }
 void RunWords()
 {
-    Console.WriteLine($"Input found: -words = {args[0]}");
+    Console.WriteLine($"_CHECK_ Input found: -words = {args[0]}");
     // -words <listname> <sortByLanguage> 
     //Listar ord(alla språk) från angiven lista.Om man anger språk sorteras listan efter
     //det, annars sortera efter första språket. 
+
+
+    string currentListName = args[1];
+    WordList currentWordList = WordList.LoadList(currentListName);
+    Console.WriteLine($"\n == The List of {args[1]} listed from {currentWordList.Languages[int.Parse(args[2])]}:");
+    currentWordList.List(int.Parse(args[2]), PrintTranslations);
+
 
 
 }
@@ -122,11 +146,11 @@ void RunCount()
     string currentListName = args[1];
     WordList currentWordList = WordList.LoadList(currentListName);
 
-    Console.WriteLine($" == -count == The list \"{currentWordList.Name}\" has {currentWordList.Count()} words");
+    Console.WriteLine($"\n == -count == The list \"{currentWordList.Name}\" has {currentWordList.Count()} words");
 }
 void RunPractice()
 {
-    Console.WriteLine($"Input found: -practice = {args[0]}");
+    Console.WriteLine($"_CHECK_ Input found: -practice = {args[0]}");
     //-practice < listname >
     //Ber användaren översätta ett slumpvis valt ord ur listan från ett slumpvis valt
     //språk till ett annat. Skriver ut om det var rätt eller fel, och fortsätter fråga efter
@@ -176,7 +200,7 @@ void TestOfWordList(bool RunThisTest)
 
         // Test load in a file to testLoadList and dispaly it
         Console.WriteLine("\n- Load in file Test:");
-        testLoadList.List(0, PrintTranslations);
+        testLoadList.List(2, PrintTranslations);
 
         // Testing Using Save
         Console.WriteLine($"\n - SAVE TEST INFO");
