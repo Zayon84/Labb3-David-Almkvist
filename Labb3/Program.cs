@@ -106,11 +106,44 @@ void RunAdd()
     string currentListName = args[1];
     WordList currentWordList = WordList.LoadList(currentListName);
 
+    AddNewWord(currentWordList); 
+
     //currentWordList.Add();
     //string currentListName = args[1];
     //WordList currentWordList = WordList.LoadList(currentListName);                  // use this type ?
 
 }
+
+void AddNewWord( WordList myList)
+{
+    int nrOfLanguages = myList.Languages.Length;
+    bool isRunning = true;
+    while (isRunning)
+    {
+        Console.WriteLine($" ADD NEW WORD to {myList.Name}: have {nrOfLanguages} langueages");
+
+        string[] wordsArray = new string[nrOfLanguages]; ;
+
+        for (int i = 0; i < nrOfLanguages; i++)
+        {
+            Console.Write($"Enter A word in {myList.Languages[i]}");
+            string currentInput = Console.ReadLine();
+            if (currentInput == "")
+            {
+                Console.WriteLine("No words found, we are quiting adding words!");
+                return;
+            }
+            wordsArray[i] = currentInput;
+        }
+        myList.Add(wordsArray);
+        myList.Save();
+        Console.WriteLine("_CHECK_  Words saved");
+
+        //myWordList.Add("Hi", "Hej", "Hola");
+
+    }
+}
+
 void RunRemove()
 {
     Console.WriteLine($"_CHECK_ Input found: -remove = {args[0]}");
