@@ -1,8 +1,7 @@
 {
   "profiles": {
     "Labb3": {
-      "commandName": "Project",
-      "commandLineArgs": "-practice\r\nen-sv\r\n-new\r\nwhooohooo\r\nsvenska\r\nspanska\r\nisländska\r\nengelska\r\narabiska\r\n"
+      "commandName": "Project"
     }
   }
 }

@@ -46,6 +46,12 @@ void TEST_Args_Stuff(bool testingArgs)
 
 void CheckArguments()
 {
+    if (args.Length == 0)
+    {
+        Console.WriteLine("Please Enter a command");
+        return;
+    }
+
     string input = args[0].ToLower();
     Console.WriteLine($"_CHECK_ Our args[0] is : {input}");
 
@@ -225,7 +231,7 @@ void GuessTheWORD(WordList myList)
     Console.WriteLine($"GUESS THE WORD !  (from{myWordList.Languages[wordToPractice.FromLanguage]} to {myWordList.Languages[wordToPractice.ToLanguage]} )");
     Console.WriteLine($"How do you type {wordToPractice.Translations[wordToPractice.FromLanguage]} in {myWordList.Languages[wordToPractice.ToLanguage]}?");
     string inputString = Console.ReadLine();
-    string check = (inputString == wordToPractice.Translations[wordToPractice.ToLanguage]) ? "CORECT" : "WRONG";
+    string check = (inputString == wordToPractice.Translations[wordToPractice.ToLanguage]) ?  "CORECT"  : "WRONG";
     Console.WriteLine($"Your Anser is: {check} !");
 }
 

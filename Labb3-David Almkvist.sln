@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Labb3", "Labb3\Labb3.csproj", "{752E3BA3-00B0-4422-9340-9DB155C9B465}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Word Library", "Word Library\Word Library.csproj", "{477B31F5-D2BD-4992-945E-BC90EE061142}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Word Library", "Word Library\Word Library.csproj", "{477B31F5-D2BD-4992-945E-BC90EE061142}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForms Labb3", "WinForms Labb3\WinForms Labb3.csproj", "{2A5D0374-5E2C-447E-9190-8C5EAD3A430D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{477B31F5-D2BD-4992-945E-BC90EE061142}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{477B31F5-D2BD-4992-945E-BC90EE061142}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{477B31F5-D2BD-4992-945E-BC90EE061142}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A5D0374-5E2C-447E-9190-8C5EAD3A430D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A5D0374-5E2C-447E-9190-8C5EAD3A430D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A5D0374-5E2C-447E-9190-8C5EAD3A430D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A5D0374-5E2C-447E-9190-8C5EAD3A430D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
