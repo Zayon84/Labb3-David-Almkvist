@@ -199,7 +199,34 @@ void RunPractice()
     //ord tills användaren lämnar en tom inmatning. Då skrivs antal övade ord ut, samt
     //hur stor andel av orden man haft rätt på.
 
+    string currentListName = args[1];
+    WordList currentWordList = WordList.LoadList(currentListName);
+    bool tryAgain = true;
+    while (tryAgain)
+    {
+        GuessTheWORD(currentWordList);
+        Console.WriteLine("\nTry again? 'y' = yes anything else = no");
+        //string inputTryAgain = Console.ReadLine();
+        if (Console.ReadLine() != "y")
+        {
+            tryAgain = false;
+        }
+    }
+}
 
+void GuessTheWORD(WordList myList)
+{
+    Word wordToPractice = myList.GetWordToPractice();
+
+    Console.WriteLine(wordToPractice.Translations[wordToPractice.FromLanguage]);
+    Console.WriteLine(wordToPractice.Translations[wordToPractice.ToLanguage]);
+    Console.WriteLine("Controll check ...TO NOT READ ABOVE NO CHEATING !!!\n");
+
+    Console.WriteLine($"GUESS THE WORD !  (from{myWordList.Languages[wordToPractice.FromLanguage]} to {myWordList.Languages[wordToPractice.ToLanguage]} )");
+    Console.WriteLine($"How do you type {wordToPractice.Translations[wordToPractice.FromLanguage]} in {myWordList.Languages[wordToPractice.ToLanguage]}?");
+    string inputString = Console.ReadLine();
+    string check = (inputString == wordToPractice.Translations[wordToPractice.ToLanguage]) ? "CORECT" : "WRONG";
+    Console.WriteLine($"Your Anser is: {check} !");
 }
 
 void RunWTF()
@@ -250,7 +277,7 @@ void TestOfWordList(bool RunThisTest)
 
         // Final Test
         Console.WriteLine($"\n - Get word TEST INFO");
-        GuessTheWORD();
+        GuessTheWORDTest();
     }
 
 }
@@ -263,7 +290,7 @@ void LoadInDefaultList()
     myWordList.Add("Moon", "Måne", "Luna");
 }
 
-void GuessTheWORD()
+void GuessTheWORDTest()
 {
     Word wordToPractice = myWordList.GetWordToPractice();
 
