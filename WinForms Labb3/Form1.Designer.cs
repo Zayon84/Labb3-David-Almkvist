@@ -40,13 +40,8 @@
             this.practiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelStart = new System.Windows.Forms.Panel();
-            this.labelLanguages = new System.Windows.Forms.Label();
-            this.listBoxLanguages = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label_WordLists = new System.Windows.Forms.Label();
-            this.listBoxWordlist = new System.Windows.Forms.ListBox();
+            this.userControl11 = new WinForms_Labb3.UserControl1();
             this.menuStrip1.SuspendLayout();
             this.panelStart.SuspendLayout();
             this.SuspendLayout();
@@ -138,78 +133,24 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(422, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 38);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Practice Words App";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // panelStart
             // 
-            this.panelStart.Controls.Add(this.labelLanguages);
-            this.panelStart.Controls.Add(this.listBoxLanguages);
-            this.panelStart.Controls.Add(this.label2);
-            this.panelStart.Controls.Add(this.label_WordLists);
-            this.panelStart.Controls.Add(this.listBoxWordlist);
-            this.panelStart.Controls.Add(this.label1);
+            this.panelStart.Controls.Add(this.userControl11);
             this.panelStart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelStart.Location = new System.Drawing.Point(0, 35);
             this.panelStart.Name = "panelStart";
             this.panelStart.Size = new System.Drawing.Size(1143, 513);
             this.panelStart.TabIndex = 6;
             // 
-            // labelLanguages
+            // userControl11
             // 
-            this.labelLanguages.AutoSize = true;
-            this.labelLanguages.Location = new System.Drawing.Point(539, 96);
-            this.labelLanguages.Name = "labelLanguages";
-            this.labelLanguages.Size = new System.Drawing.Size(101, 25);
-            this.labelLanguages.TabIndex = 9;
-            this.labelLanguages.Text = "Languages:";
-            // 
-            // listBoxLanguages
-            // 
-            this.listBoxLanguages.FormattingEnabled = true;
-            this.listBoxLanguages.ItemHeight = 25;
-            this.listBoxLanguages.Location = new System.Drawing.Point(539, 124);
-            this.listBoxLanguages.Name = "listBoxLanguages";
-            this.listBoxLanguages.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.listBoxLanguages.Size = new System.Drawing.Size(315, 254);
-            this.listBoxLanguages.TabIndex = 8;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(468, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 25);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Select a List to use!";
-            // 
-            // label_WordLists
-            // 
-            this.label_WordLists.AutoSize = true;
-            this.label_WordLists.Location = new System.Drawing.Point(185, 96);
-            this.label_WordLists.Name = "label_WordLists";
-            this.label_WordLists.Size = new System.Drawing.Size(99, 25);
-            this.label_WordLists.TabIndex = 6;
-            this.label_WordLists.Text = "Word Lists:";
-            // 
-            // listBoxWordlist
-            // 
-            this.listBoxWordlist.FormattingEnabled = true;
-            this.listBoxWordlist.ItemHeight = 25;
-            this.listBoxWordlist.Location = new System.Drawing.Point(185, 124);
-            this.listBoxWordlist.Name = "listBoxWordlist";
-            this.listBoxWordlist.Size = new System.Drawing.Size(315, 254);
-            this.listBoxWordlist.TabIndex = 5;
-            this.listBoxWordlist.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.userControl11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl11.Location = new System.Drawing.Point(0, 0);
+            this.userControl11.Name = "userControl11";
+            this.userControl11.Size = new System.Drawing.Size(1143, 513);
+            this.userControl11.TabIndex = 0;
+            //this.userControl11.Visible = false;                               //  show and disable the usercontroll
+            
             // 
             // Form1
             // 
@@ -217,6 +158,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1143, 548);
             this.Controls.Add(this.panelStart);
+            //this.Controls.Add(this.panelEditing);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -225,7 +167,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panelStart.ResumeLayout(false);
-            this.panelStart.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,12 +186,7 @@
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripSeparator toolStripSeparator2;
-        private Label label1;
         private Panel panelStart;
-        private ListBox listBoxWordlist;
-        private Label label_WordLists;
-        private Label labelLanguages;
-        private ListBox listBoxLanguages;
-        private Label label2;
+        private UserControl1 userControl11;
     }
 }
