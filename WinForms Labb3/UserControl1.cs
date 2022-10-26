@@ -13,7 +13,8 @@ namespace WinForms_Labb3
 {
     public partial class UserControl1 : UserControl
     {
-        public Form1 Parantform { get; set; }
+        
+        public Form1 Parentform { get; set; }
         public string[] Mylists { get { return WordList.GetLists(); } }
 
         public UserControl1()
@@ -46,7 +47,7 @@ namespace WinForms_Labb3
                 //listsToolStripMenuItem.Enabled = false;
                 //removeToolStripMenuItem.Enabled = false;
                 //Form1.IsListValid = false;
-                Parantform?.CheckListIfValid(false);
+                Parentform?.CheckListIfValid(false);
 
                 button_Edit.Enabled = false;
                 button_Practice.Enabled = false;
@@ -91,6 +92,47 @@ namespace WinForms_Labb3
         private void UserControl1_Load(object sender, EventArgs e)
         {
             LoadInStart();
+
+        }
+
+        private void button_Practice_Click(object sender, EventArgs e)
+        {
+            Parentform?.RunPractice();
+
+        }
+
+        private void button_NewList_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_Edit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelLanguages_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBoxLanguages_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_WordLists_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }

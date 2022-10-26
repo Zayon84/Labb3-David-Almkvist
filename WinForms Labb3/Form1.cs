@@ -12,7 +12,7 @@ namespace WinForms_Labb3
         {
             InitializeComponent();
 
-            userControl11.Parantform = this;
+            userControl11.Parentform = this;
            
         }
 
@@ -21,6 +21,12 @@ namespace WinForms_Labb3
         //    CheckListIfValid(isListValid);
 
         //}
+
+        public void RunPractice()
+        {
+            userControl11.Visible = false;
+            practiceWords1.Visible = true;
+        }
         public  void CheckListIfValid(bool isValidList)
         {
 

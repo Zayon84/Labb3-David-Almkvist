@@ -42,6 +42,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelStart = new System.Windows.Forms.Panel();
             this.userControl11 = new WinForms_Labb3.UserControl1();
+            this.practiceWords1 = new WinForms_Labb3.PracticeWords();
             this.menuStrip1.SuspendLayout();
             this.panelStart.SuspendLayout();
             this.SuspendLayout();
@@ -135,6 +136,7 @@
             // 
             // panelStart
             // 
+            this.panelStart.Controls.Add(this.practiceWords1);
             this.panelStart.Controls.Add(this.userControl11);
             this.panelStart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelStart.Location = new System.Drawing.Point(0, 35);
@@ -147,10 +149,18 @@
             this.userControl11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userControl11.Location = new System.Drawing.Point(0, 0);
             this.userControl11.Name = "userControl11";
+            this.userControl11.Parentform = null;
             this.userControl11.Size = new System.Drawing.Size(1143, 513);
             this.userControl11.TabIndex = 0;
-            //this.userControl11.Visible = false;                               //  show and disable the usercontroll
-            
+            // 
+            // practiceWords1
+            // 
+            this.practiceWords1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.practiceWords1.Location = new System.Drawing.Point(0, 0);
+            this.practiceWords1.Name = "practiceWords1";
+            this.practiceWords1.Size = new System.Drawing.Size(1143, 513);
+            this.practiceWords1.TabIndex = 1;
+            this.practiceWords1.Visible = false;
             // 
             // Form1
             // 
@@ -158,7 +168,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1143, 548);
             this.Controls.Add(this.panelStart);
-            //this.Controls.Add(this.panelEditing);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -188,5 +197,6 @@
         private ToolStripSeparator toolStripSeparator2;
         private Panel panelStart;
         private UserControl1 userControl11;
+        private PracticeWords practiceWords1;
     }
 }

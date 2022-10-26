@@ -47,6 +47,7 @@
             this.button_Practice.TabIndex = 21;
             this.button_Practice.Text = "Practice";
             this.button_Practice.UseVisualStyleBackColor = true;
+            this.button_Practice.Click += new System.EventHandler(this.button_Practice_Click);
             // 
             // button_NewList
             // 
@@ -56,6 +57,7 @@
             this.button_NewList.TabIndex = 20;
             this.button_NewList.Text = "New List";
             this.button_NewList.UseVisualStyleBackColor = true;
+            this.button_NewList.Click += new System.EventHandler(this.button_NewList_Click);
             // 
             // button_Edit
             // 
@@ -65,15 +67,18 @@
             this.button_Edit.TabIndex = 19;
             this.button_Edit.Text = "Edit";
             this.button_Edit.UseVisualStyleBackColor = true;
+            this.button_Edit.Click += new System.EventHandler(this.button_Edit_Click);
             // 
             // labelLanguages
             // 
             this.labelLanguages.AutoSize = true;
+            this.labelLanguages.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelLanguages.Location = new System.Drawing.Point(411, 112);
             this.labelLanguages.Name = "labelLanguages";
-            this.labelLanguages.Size = new System.Drawing.Size(101, 25);
+            this.labelLanguages.Size = new System.Drawing.Size(108, 25);
             this.labelLanguages.TabIndex = 18;
             this.labelLanguages.Text = "Languages:";
+            this.labelLanguages.Click += new System.EventHandler(this.labelLanguages_Click);
             // 
             // listBoxLanguages
             // 
@@ -84,6 +89,7 @@
             this.listBoxLanguages.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.listBoxLanguages.Size = new System.Drawing.Size(315, 254);
             this.listBoxLanguages.TabIndex = 17;
+            this.listBoxLanguages.SelectedIndexChanged += new System.EventHandler(this.listBoxLanguages_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -93,15 +99,18 @@
             this.label2.Size = new System.Drawing.Size(162, 25);
             this.label2.TabIndex = 16;
             this.label2.Text = "Select a List to use!";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label_WordLists
             // 
             this.label_WordLists.AutoSize = true;
+            this.label_WordLists.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label_WordLists.Location = new System.Drawing.Point(57, 112);
             this.label_WordLists.Name = "label_WordLists";
-            this.label_WordLists.Size = new System.Drawing.Size(99, 25);
+            this.label_WordLists.Size = new System.Drawing.Size(106, 25);
             this.label_WordLists.TabIndex = 15;
             this.label_WordLists.Text = "Word Lists:";
+            this.label_WordLists.Click += new System.EventHandler(this.label_WordLists_Click);
             // 
             // listBoxWordlist
             // 
@@ -116,14 +125,15 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(294, 28);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 38);
+            this.label1.Size = new System.Drawing.Size(274, 38);
             this.label1.TabIndex = 13;
             this.label1.Text = "Practice Words App";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // UserControl1
             // 
