@@ -40,21 +40,26 @@
             this.practiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.panelStart = new System.Windows.Forms.Panel();
+            this.labelLanguages = new System.Windows.Forms.Label();
+            this.listBoxLanguages = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label_WordLists = new System.Windows.Forms.Label();
+            this.listBoxWordlist = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
+            this.panelStart.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(1143, 35);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -72,129 +77,155 @@
             this.toolStripSeparator2,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
             this.newToolStripMenuItem.Text = "New";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(114, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(175, 6);
             // 
             // listsToolStripMenuItem
             // 
             this.listsToolStripMenuItem.Name = "listsToolStripMenuItem";
-            this.listsToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.listsToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
             this.listsToolStripMenuItem.Text = "Lists";
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
             this.addToolStripMenuItem.Text = "Add";
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
             this.removeToolStripMenuItem.Text = "Remove";
             // 
             // wordsToolStripMenuItem
             // 
             this.wordsToolStripMenuItem.Name = "wordsToolStripMenuItem";
-            this.wordsToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.wordsToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
             this.wordsToolStripMenuItem.Text = "Words";
             // 
             // countToolStripMenuItem
             // 
             this.countToolStripMenuItem.Name = "countToolStripMenuItem";
-            this.countToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.countToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
             this.countToolStripMenuItem.Text = "Count";
             // 
             // practiceToolStripMenuItem
             // 
             this.practiceToolStripMenuItem.Name = "practiceToolStripMenuItem";
-            this.practiceToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.practiceToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
             this.practiceToolStripMenuItem.Text = "Practice";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(114, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(175, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
             this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(170, 177);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 44);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Edit List";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(312, 177);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 44);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Pick WordList";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(449, 177);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 44);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Practice";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(214, 24);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(422, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 15);
+            this.label1.Size = new System.Drawing.Size(259, 38);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Current List";
+            this.label1.Text = "Practice Words App";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panelStart
+            // 
+            this.panelStart.Controls.Add(this.labelLanguages);
+            this.panelStart.Controls.Add(this.listBoxLanguages);
+            this.panelStart.Controls.Add(this.label2);
+            this.panelStart.Controls.Add(this.label_WordLists);
+            this.panelStart.Controls.Add(this.listBoxWordlist);
+            this.panelStart.Controls.Add(this.label1);
+            this.panelStart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelStart.Location = new System.Drawing.Point(0, 35);
+            this.panelStart.Name = "panelStart";
+            this.panelStart.Size = new System.Drawing.Size(1143, 513);
+            this.panelStart.TabIndex = 6;
+            // 
+            // labelLanguages
+            // 
+            this.labelLanguages.AutoSize = true;
+            this.labelLanguages.Location = new System.Drawing.Point(539, 96);
+            this.labelLanguages.Name = "labelLanguages";
+            this.labelLanguages.Size = new System.Drawing.Size(101, 25);
+            this.labelLanguages.TabIndex = 9;
+            this.labelLanguages.Text = "Languages:";
+            // 
+            // listBoxLanguages
+            // 
+            this.listBoxLanguages.FormattingEnabled = true;
+            this.listBoxLanguages.ItemHeight = 25;
+            this.listBoxLanguages.Location = new System.Drawing.Point(539, 124);
+            this.listBoxLanguages.Name = "listBoxLanguages";
+            this.listBoxLanguages.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.listBoxLanguages.Size = new System.Drawing.Size(315, 254);
+            this.listBoxLanguages.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(297, 24);
+            this.label2.Location = new System.Drawing.Point(468, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 15);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "(The List Name)";
+            this.label2.Size = new System.Drawing.Size(162, 25);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Select a List to use!";
+            // 
+            // label_WordLists
+            // 
+            this.label_WordLists.AutoSize = true;
+            this.label_WordLists.Location = new System.Drawing.Point(185, 96);
+            this.label_WordLists.Name = "label_WordLists";
+            this.label_WordLists.Size = new System.Drawing.Size(99, 25);
+            this.label_WordLists.TabIndex = 6;
+            this.label_WordLists.Text = "Word Lists:";
+            // 
+            // listBoxWordlist
+            // 
+            this.listBoxWordlist.FormattingEnabled = true;
+            this.listBoxWordlist.ItemHeight = 25;
+            this.listBoxWordlist.Location = new System.Drawing.Point(185, 124);
+            this.listBoxWordlist.Name = "listBoxWordlist";
+            this.listBoxWordlist.Size = new System.Drawing.Size(315, 254);
+            this.listBoxWordlist.TabIndex = 5;
+            this.listBoxWordlist.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1143, 548);
+            this.Controls.Add(this.panelStart);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Labb 3 WordList ";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panelStart.ResumeLayout(false);
+            this.panelStart.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,10 +245,12 @@
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripSeparator toolStripSeparator2;
-        private Button button1;
-        private Button button2;
-        private Button button3;
         private Label label1;
+        private Panel panelStart;
+        private ListBox listBoxWordlist;
+        private Label label_WordLists;
+        private Label labelLanguages;
+        private ListBox listBoxLanguages;
         private Label label2;
     }
 }
