@@ -19,17 +19,17 @@ Console.WriteLine("\t\tLabb3 – Utveckla en applikation för att träna glosor.
 WordList myWordList = new WordList("EngSweSpa", "English", "Swedish", "Spanish");
 WordList testLoadList = WordList.LoadList("lang3");
 TestOfWordList(false);
-TEST_Args_Stuff(true);
+TEST_Args_Stuff(false);
 LoadInDefaultList();            /// TESTING Functions   // TODO: Remove when done
 
 // THE CONSOLE 
-BasePrint();
+//BasePrint();
 CheckArguments();
-
+Console.WriteLine();
 
 void TEST_Args_Stuff(bool testingArgs)
 {
-    if (true)
+    if (testingArgs)
     {
         Console.WriteLine("\n_CHECK_ Testing Args stuff!");
         Console.WriteLine($"We have {args.Length} args at this point");
@@ -48,12 +48,12 @@ void CheckArguments()
 {
     if (args.Length == 0)
     {
-        Console.WriteLine("Please Enter a command");
+        BasePrint();
         return;
     }
 
     string input = args[0].ToLower();
-    Console.WriteLine($"_CHECK_ Our args[0] is : {input}");
+    //Console.WriteLine($"_CHECK_ Our args[0] is : {input}");
 
     (input switch
     {
@@ -69,9 +69,8 @@ void CheckArguments()
 
 void RunLists() 
 {
-    Console.WriteLine($"_CHECK_ Input found: -lists = {args[0]}");
     // Listar namnen på alla ordlistor från mappen i appdata/local/”mapp med .dat filer”
-    Console.WriteLine($"\n == Available List are:");
+    Console.WriteLine($" == Available List are:");
     int indexCount = 0;
     foreach (String name in WordList.GetLists())
     {
@@ -176,26 +175,73 @@ void RunWords()
     //Listar ord(alla språk) från angiven lista.Om man anger språk sorteras listan efter
     //det, annars sortera efter första språket. 
 
+    //if (CheckIfListNameWasSent())
+    //{
+    //    string currentListName = args[1];
+    //    WordList currentWordList = WordList.LoadList(currentListName);
 
+
+    //    int languageToSortBy = CheckIfValidLanguageToSortFrom(currentWordList);
+
+    //    Console.WriteLine($"\n == The List of {args[1]} listed from {currentWordList.Languages[languageToSortBy]}:");
+    //    currentWordList.List(languageToSortBy, PrintTranslations);
+    //}
+    //else
+    //{
+    //    Console.WriteLine("No list name was specified!");
+    //}
     string currentListName = args[1];
     WordList currentWordList = WordList.LoadList(currentListName);
     Console.WriteLine($"\n == The List of {args[1]} listed from {currentWordList.Languages[int.Parse(args[2])]}:");
     currentWordList.List(int.Parse(args[2]), PrintTranslations);
-
-
-
 }
+
+//int CheckIfValidLanguageToSortFrom(WordList myList)
+//{
+//    if (args.Length <= 2)
+//    {
+//        // KOLLA Antal språk som finns och det 
+//        return int.Parse(args[2]);
+//    }
+//    return 0;
+//}
 void RunCount()
 {
-    Console.WriteLine($"_CHECK_ Input found: -count = {args[0]}");
+    //Console.WriteLine($"_CHECK_ Input found: -count = {args[0]}");
     // -count <listname> 
     // Skriver ut hur många ord det finns i namngiven lista. 
+    if (args.Length <= 1)
+    {
+        Console.WriteLine("A list Name is needed to be counted! ");
+    }
+    else if (CheckIfListExist(args[1]))
+    {
+        string currentListName = args[1];
+        WordList currentWordList = WordList.LoadList(currentListName);
 
-    string currentListName = args[1];
-    WordList currentWordList = WordList.LoadList(currentListName);
-
-    Console.WriteLine($"\n == -count == The list \"{currentWordList.Name}\" has {currentWordList.Count()} words");
+        Console.WriteLine($"\nThe list \"{currentWordList.Name}\" has {currentWordList.Count()} words");
+    }
+    else
+    {
+        Console.WriteLine($"There is no list called \"{args[1]}\" Check your spelling with '-lists'");
+    }
 }
+
+bool CheckIfListExist(string listname)
+{
+    foreach (String name in WordList.GetLists())
+    {
+        if (name == listname)   {   return true;    }
+    }
+    return false;
+}
+
+bool CheckIfListNameWasSent()
+{
+    if (args.Length <= 1) { return false; }
+    return true;
+}
+
 void RunPractice()
 {
     Console.WriteLine($"_CHECK_ Input found: -practice = {args[0]}");
@@ -237,8 +283,8 @@ void GuessTheWORD(WordList myList)
 
 void RunWTF()
 {
-    Console.WriteLine("What did you want with that ?");
     Console.WriteLine("Input does not match any known command!");
+    Console.WriteLine();
     BasePrint();
 }
 
@@ -249,7 +295,7 @@ void BasePrint()
     Console.WriteLine("\t-new < list name > < language 1 > < language 2 > .. < langauge n >");
     Console.WriteLine("\t-add < list name >");
     Console.WriteLine("\t-remove < list name > < language > < word 1 > < word 2 > .. < word n >");
-    Console.WriteLine("\t-words<listname> < sortByLanguage >");
+    Console.WriteLine("\t-words <listname> < sortByLanguage >");
     Console.WriteLine("\t-count < listname >");
     Console.WriteLine("\t-practice<listname>");
 }
