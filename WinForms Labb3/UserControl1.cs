@@ -51,11 +51,16 @@ namespace WinForms_Labb3
 
         private void UpdateLists()
         {
+            listBoxWordlist.Items.Clear();
             foreach (String name in Mylists)
             {
                 listBoxWordlist.Items.Add(name);
             }
+            if (listBoxWordlist.SelectedIndex == null)
+            {
+            }
             listBoxWordlist.SelectedIndex = 0;
+
         }
         private void UpdateLanguages(WordList mylist)
         {
@@ -70,6 +75,8 @@ namespace WinForms_Labb3
         {
             if (Mylists.Length != 0)
             {
+                Parentform.CurrentList = (WordList.LoadList(listBoxWordlist.SelectedItem.ToString()));
+
                 UpdateLanguages(WordList.LoadList(listBoxWordlist.SelectedItem.ToString()));
             }
         }
@@ -83,7 +90,6 @@ namespace WinForms_Labb3
         private void button_Practice_Click(object sender, EventArgs e)
         {
             Parentform?.RunPractice();
-
         }
 
         private void button_NewList_Click(object sender, EventArgs e)
@@ -96,6 +102,5 @@ namespace WinForms_Labb3
         {
 
         }
-
     }
 }

@@ -8,6 +8,7 @@ namespace WinForms_Labb3
     {
 
         public  bool IsListValid { get; set; }
+        public WordList CurrentList { get; set; }
         public Form1()
         {
             InitializeComponent();
@@ -18,6 +19,10 @@ namespace WinForms_Labb3
            
         }
 
+        public void SetCurrentList(WordList myList)
+        {
+            CurrentList = myList;
+        }
         public void RunList()
         {
             userControl11.Visible = true;
@@ -50,9 +55,15 @@ namespace WinForms_Labb3
             removeToolStripMenuItem.Enabled = isValidList;
         }
 
-        private void newWordControl1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
+            this.panelStart.Controls.Add(this.practiceWords1);
+            this.panelStart.Controls.Add(this.userControl11);
+        }
 
+        private void practiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RunPractice();
         }
     }
 
