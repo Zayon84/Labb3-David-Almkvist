@@ -220,9 +220,6 @@ void RunWords()
 
 void RunCount()
 {
-    //Console.WriteLine($"_CHECK_ Input found: -count = {args[0]}");
-    // -count <listname> 
-    // Skriver ut hur många ord det finns i namngiven lista. 
     if (args.Length <= 1)
     {
         Console.WriteLine("A list Name is needed to be counted! ");
@@ -273,8 +270,8 @@ void RunPractice()
             {
                 GuessTheWORD(currentWordList);
                 Console.WriteLine("\nTry again? 'y' = yes anything else = no");
-                //string inputTryAgain = Console.ReadLine();
-                if (Console.ReadLine() != "y")
+
+                if (Console.ReadLine().ToLower() != "y" )
                 {
                     tryAgain = false;
                 }
@@ -295,14 +292,14 @@ void GuessTheWORD(WordList myList)
 {
     Word wordToPractice = myList.GetWordToPractice();
 
-    Console.WriteLine(wordToPractice.Translations[wordToPractice.FromLanguage]);
-    Console.WriteLine(wordToPractice.Translations[wordToPractice.ToLanguage]);
+    Console.WriteLine($"From {myList.Languages[wordToPractice.FromLanguage]} " + wordToPractice.Translations[wordToPractice.FromLanguage]);
+    Console.WriteLine($"To {myList.Languages[wordToPractice.ToLanguage]} " + wordToPractice.Translations[wordToPractice.ToLanguage]);
     Console.WriteLine("Controll check ...TO NOT READ ABOVE NO CHEATING !!!\n");
 
-    Console.WriteLine($"GUESS THE WORD !  (from{myWordList.Languages[wordToPractice.FromLanguage]} to {myWordList.Languages[wordToPractice.ToLanguage]} )");
-    Console.WriteLine($"How do you type {wordToPractice.Translations[wordToPractice.FromLanguage]} in {myWordList.Languages[wordToPractice.ToLanguage]}?");
+    Console.WriteLine($"GUESS THE WORD! (from {myList.Languages[wordToPractice.FromLanguage]} to {myList.Languages[wordToPractice.ToLanguage]} )");
+    Console.Write($"How do you type {wordToPractice.Translations[wordToPractice.FromLanguage]} in {myList.Languages[wordToPractice.ToLanguage]}?: ");
     string inputString = Console.ReadLine();
-    string check = (inputString == wordToPractice.Translations[wordToPractice.ToLanguage]) ?  "CORECT"  : "WRONG";
+    string check = (inputString.ToLower() == wordToPractice.Translations[wordToPractice.ToLanguage].ToLower()) ?  "CORECT"  : "WRONG";
     Console.WriteLine($"Your Anser is: {check} !");
 }
 
