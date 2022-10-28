@@ -258,22 +258,33 @@ void RunPractice()
     {
         if (CheckIfListExist(args[1]))
         {
-            //-practice < listname >
-            //Ber användaren översätta ett slumpvis valt ord ur listan från ett slumpvis valt
-            //språk till ett annat. Skriver ut om det var rätt eller fel, och fortsätter fråga efter
-            //ord tills användaren lämnar en tom inmatning. Då skrivs antal övade ord ut, samt
-            //hur stor andel av orden man haft rätt på.
             string currentListName = args[1];
             WordList currentWordList = WordList.LoadList(currentListName);
             bool tryAgain = true;
+
+            float practicedWordsAmount = 0;
+            float correctAnswersAmount = 0;
+
             while (tryAgain)
             {
-                GuessTheWORD(currentWordList);
+                practicedWordsAmount++;
+                correctAnswersAmount += GuessTheWORD(currentWordList);
                 Console.WriteLine("\nTry again? 'y' = yes anything else = no");
 
                 if (Console.ReadLine().ToLower() != "y" )
                 {
                     tryAgain = false;
+                    float winProcent = correctAnswersAmount / practicedWordsAmount * 100;
+                    Console.WriteLine($"You have practiced {practicedWordsAmount} words and got {correctAnswersAmount} right " +
+                        $"thats make it {winProcent:f1}% success rate");
+                    if (winProcent > 75)
+                    {
+                        Console.WriteLine("Higher then 75%, GOOD JOB!");
+                    }
+                    else if (winProcent < 25)
+                    {
+                        Console.WriteLine("ummm You need to practice some more!");
+                    }
                 }
             }
         }
@@ -288,19 +299,30 @@ void RunPractice()
     } 
 }
 
-void GuessTheWORD(WordList myList)
+int GuessTheWORD(WordList myList)
 {
     Word wordToPractice = myList.GetWordToPractice();
-
-    Console.WriteLine($"From {myList.Languages[wordToPractice.FromLanguage]} " + wordToPractice.Translations[wordToPractice.FromLanguage]);
-    Console.WriteLine($"To {myList.Languages[wordToPractice.ToLanguage]} " + wordToPractice.Translations[wordToPractice.ToLanguage]);
-    Console.WriteLine("Controll check ...TO NOT READ ABOVE NO CHEATING !!!\n");
-
     Console.WriteLine($"GUESS THE WORD! (from {myList.Languages[wordToPractice.FromLanguage]} to {myList.Languages[wordToPractice.ToLanguage]} )");
     Console.Write($"How do you type {wordToPractice.Translations[wordToPractice.FromLanguage]} in {myList.Languages[wordToPractice.ToLanguage]}?: ");
+
     string inputString = Console.ReadLine();
-    string check = (inputString.ToLower() == wordToPractice.Translations[wordToPractice.ToLanguage].ToLower()) ?  "CORECT"  : "WRONG";
-    Console.WriteLine($"Your Anser is: {check} !");
+    int score = 0;
+    Console.Write($"Your Anser is: ");
+    if (inputString.ToLower() == wordToPractice.Translations[wordToPractice.ToLanguage].ToLower())
+    {
+        score = 1;
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.Write($"CORECT");
+    }
+    else
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.Write($"WRONG");
+    }
+    Console.ForegroundColor = ConsoleColor.White;
+    Console.WriteLine("!");
+
+    return score;
 }
 
 void RunWTF()
