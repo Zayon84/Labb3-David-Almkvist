@@ -144,7 +144,7 @@
             this.Controls.Add(this.listBoxWordlist);
             this.Controls.Add(this.label1);
             this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(1143, 633);
+            this.Size = new System.Drawing.Size(1000, 500);
             this.Load += new System.EventHandler(this.UserControl1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

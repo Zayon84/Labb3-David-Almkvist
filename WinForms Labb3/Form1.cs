@@ -23,6 +23,12 @@ namespace WinForms_Labb3
         {
             CurrentList = myList;
         }
+
+        public void RunNew()
+        {
+            CreateNewListForm newForm = new();
+            DialogResult result = newForm.ShowDialog();
+        }
         public void RunList()
         {
             userControl11.Visible = true;

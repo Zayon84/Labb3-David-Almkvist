@@ -52,17 +52,17 @@
             // 
             // button_Main
             // 
-            this.button_Main.Location = new System.Drawing.Point(68, 86);
+            this.button_Main.Location = new System.Drawing.Point(723, 303);
             this.button_Main.Name = "button_Main";
-            this.button_Main.Size = new System.Drawing.Size(143, 83);
+            this.button_Main.Size = new System.Drawing.Size(144, 60);
             this.button_Main.TabIndex = 23;
-            this.button_Main.Text = "Main";
+            this.button_Main.Text = "Finish Practice";
             this.button_Main.UseVisualStyleBackColor = true;
             this.button_Main.Click += new System.EventHandler(this.button_Main_Click);
             // 
             // textBoxInputWord
             // 
-            this.textBoxInputWord.Location = new System.Drawing.Point(406, 304);
+            this.textBoxInputWord.Location = new System.Drawing.Point(335, 261);
             this.textBoxInputWord.Name = "textBoxInputWord";
             this.textBoxInputWord.Size = new System.Drawing.Size(294, 31);
             this.textBoxInputWord.TabIndex = 24;
@@ -70,7 +70,7 @@
             // 
             // buttonSubmit
             // 
-            this.buttonSubmit.Location = new System.Drawing.Point(582, 381);
+            this.buttonSubmit.Location = new System.Drawing.Point(427, 316);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(112, 34);
             this.buttonSubmit.TabIndex = 25;
@@ -82,7 +82,7 @@
             // 
             this.labelTranslateThis.AutoSize = true;
             this.labelTranslateThis.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelTranslateThis.Location = new System.Drawing.Point(204, 212);
+            this.labelTranslateThis.Location = new System.Drawing.Point(133, 169);
             this.labelTranslateThis.Name = "labelTranslateThis";
             this.labelTranslateThis.Size = new System.Drawing.Size(734, 38);
             this.labelTranslateThis.TabIndex = 26;
@@ -92,7 +92,7 @@
             // 
             this.labelListName.AutoSize = true;
             this.labelListName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.labelListName.Location = new System.Drawing.Point(639, 176);
+            this.labelListName.Location = new System.Drawing.Point(568, 133);
             this.labelListName.Name = "labelListName";
             this.labelListName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelListName.Size = new System.Drawing.Size(87, 25);
@@ -103,7 +103,7 @@
             // 
             this.labelResults.AutoSize = true;
             this.labelResults.Font = new System.Drawing.Font("Sylfaen", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelResults.Location = new System.Drawing.Point(742, 287);
+            this.labelResults.Location = new System.Drawing.Point(671, 244);
             this.labelResults.Name = "labelResults";
             this.labelResults.Size = new System.Drawing.Size(0, 52);
             this.labelResults.TabIndex = 28;
@@ -111,7 +111,7 @@
             // labelScore
             // 
             this.labelScore.AutoSize = true;
-            this.labelScore.Location = new System.Drawing.Point(406, 276);
+            this.labelScore.Location = new System.Drawing.Point(335, 233);
             this.labelScore.Name = "labelScore";
             this.labelScore.Size = new System.Drawing.Size(90, 25);
             this.labelScore.TabIndex = 29;
@@ -130,7 +130,7 @@
             this.Controls.Add(this.button_Main);
             this.Controls.Add(this.labelTitle);
             this.Name = "PracticeWords";
-            this.Size = new System.Drawing.Size(1143, 633);
+            this.Size = new System.Drawing.Size(1000, 500);
             this.Load += new System.EventHandler(this.PracticeWords_Load);
             this.VisibleChanged += new System.EventHandler(this.PracticeWords_VisibleChanged);
             this.ResumeLayout(false);

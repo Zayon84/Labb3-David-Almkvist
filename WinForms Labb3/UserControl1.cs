@@ -94,7 +94,7 @@ namespace WinForms_Labb3
 
         private void button_NewList_Click(object sender, EventArgs e)
         {
-
+            Parentform?.RunNew();
 
         }
 
