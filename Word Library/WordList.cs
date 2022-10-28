@@ -131,17 +131,17 @@ namespace Word_Library
             Random rand = new Random();
             int choosenWordIndex = rand.Next(0, myWordsList.Count);                             // TODO: Refacor to proper words
 
-            int toL = rand.Next(Languages.Length);
-            int fromL = rand.Next(Languages.Length);
+            int toLanguage = rand.Next(Languages.Length);
+            int fromLanguage = rand.Next(Languages.Length);
 
-            while (toL == fromL)
+            while (toLanguage == fromLanguage)
                 {
-                    fromL = rand.Next(Languages.Length);
+                    fromLanguage = rand.Next(Languages.Length);
                 }
 
             Word theChoosenOne = myWordsList[choosenWordIndex];
 
-            theChoosenOne = new Word(fromL,toL,theChoosenOne.Translations);
+            theChoosenOne = new Word(fromLanguage,toLanguage,theChoosenOne.Translations);
 
             return theChoosenOne;
         }

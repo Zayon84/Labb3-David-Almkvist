@@ -2,7 +2,7 @@
   "profiles": {
     "Labb3": {
       "commandName": "Project",
-      "commandLineArgs": "-words\r\nlang3\r\n"
+      "commandLineArgs": "\r\n"
     }
   }
 }

@@ -59,6 +59,7 @@ void CheckArguments()
     {
         "-lists"    => (Action) RunLists,
         "-new"      => RunNew,
+        "-add"      => RunAdd,
         "-remove"   => RunRemove,
         "-words"    => RunWords,
         "-count"    => RunCount,
@@ -78,45 +79,40 @@ void RunLists()
         Console.WriteLine($"{indexCount}. {name}");
     }
 };
+
 void RunNew()
 {
-    Console.WriteLine($"_CHECK_ Input found: -new = {args[0]}");
-    //-new < list name > < language 1 > < language 2 > .. < langauge n >
-    //Skapar(och sparar) en ny lista med angivet namn och så många språk som
-    //angivits.Går direkt in i loopen för att addera nya ord(se - add). 
+    if (args.Length < 4)
+    {
+        Console.WriteLine(" Error! in creating new list: need a name and at least 2 languages");
+        return;
+    }
 
-    //string myParameterString = $"\"{args[1]}\", \"{args[2]}\",\"{args[3]}\"  ";                  //   \"{args[2]}\"
-    //WordList newList = new WordList(myParameterString.ToString());
-
-    //WordList newList = new WordList(args[1], args[2], args[3]);                   // WORKING !
     WordList newList = new WordList(args[1], args.Skip(2).ToArray());
-    Console.WriteLine($"-- new list created!  called = {args[1]} --");
-
     newList.Save();
-    Console.WriteLine($"-- List = {args[1]} SAVED!!! : Now calling RunAdd --");
-
+    Console.WriteLine($"New list has been created called \"{args[1]}\"");
     RunAdd();
-
-    //WordList myWordList = new WordList("EngSweSpa", "English", "Swedish", "Spanish");
-
 };
+
 void RunAdd()
 {
-    Console.WriteLine($"_CHECK_ Input found: -add = {args[0]}");
-    // -add <list name> 
-    //Frågar användaren efter ett nytt ord(på listans första språk), och frågar därefter i
-    //tur och ordning efter översättningar till alla språk i listan. Sedan fortsätter den att
-    //fråga efter nya ord tills användaren avbryter genom att mata in en tom rad.
-    TEST_Args_Stuff(true);
-    string currentListName = args[1];
-    WordList currentWordList = WordList.LoadList(currentListName);
+    if (args.Length == 1)
+    {
+        Console.WriteLine("Error! Need a list if we want to add something!");
+        return ;
+    }
+    if (CheckIfListExist(args[1]))
+    {
+        string currentListName = args[1];
+        WordList currentWordList = WordList.LoadList(currentListName);
 
-    AddNewWord(currentWordList); 
-
-    //currentWordList.Add();
-    //string currentListName = args[1];
-    //WordList currentWordList = WordList.LoadList(currentListName);                  // use this type ?
-
+        AddNewWord(currentWordList);
+    }
+    else
+    {
+        Console.WriteLine($"Error! Your list \"{args[1]}\" does´t not exist! ");
+    }
+    
 }
 
 void AddNewWord( WordList myList)
@@ -125,13 +121,15 @@ void AddNewWord( WordList myList)
     bool isRunning = true;
     while (isRunning)
     {
-        Console.WriteLine($" ADD NEW WORD to {myList.Name}: have {nrOfLanguages} langueages");
+        Console.WriteLine($"The list \"{myList.Name}\" have {nrOfLanguages} languages:");
 
         string[] wordsArray = new string[nrOfLanguages]; ;
 
         for (int i = 0; i < nrOfLanguages; i++)
         {
-            Console.Write($"Enter A word in {myList.Languages[i]}");
+            if (i == 0) {   Console.Write($"Enter a word in {myList.Languages[i]}: ");  }
+            else        {   Console.Write($"Enter a translation in {myList.Languages[i]}: ");  }
+
             string currentInput = Console.ReadLine();
             if (currentInput == "")
             {
@@ -142,69 +140,84 @@ void AddNewWord( WordList myList)
         }
         myList.Add(wordsArray);
         myList.Save();
-        Console.WriteLine("_CHECK_  Words saved");
-
-        //myWordList.Add("Hi", "Hej", "Hola");
-
+        Console.WriteLine();
     }
 }
 
 void RunRemove()
 {
-    Console.WriteLine($"_CHECK_ Input found: -remove = {args[0]}");
+
     //-remove <list name> <language> <word 1> <word 2> .. <word n> 
     //Raderar angivna ord från namngiven lista och språk. 
-    string currentListName = args[1];
-    WordList currentWordList = WordList.LoadList(currentListName);
-    Console.WriteLine($"\n == We are trying to removing the word {args[3]}");                       // TODO: need to be able to handle multiple args
-    if (currentWordList.Remove(int.Parse(args[2]), args[3]))
+
+    if (args.Length == 1)
     {
-        Console.WriteLine("WE FOUND THE WORD!");
-        currentWordList.Save();
+        Console.WriteLine("Error! Need a list name if we want to remove something!");
+        return;
+    }
+    if (CheckIfListExist(args[1]))
+    {
+        if (args.Length >3 )
+        {
+            string currentListName = args[1];
+            WordList currentWordList = WordList.LoadList(currentListName);
+            Console.WriteLine($"\n == We are trying to removing the word {args[3]}");                       // TODO: need to be able to handle multiple args
+            if (currentWordList.Remove(int.Parse(args[2]), args[3]))
+            {
+                Console.WriteLine("WE FOUND THE WORD!");
+                currentWordList.Save();
+            }
+            else
+            {
+                Console.WriteLine("WE didn´t find it :(");
+            }
+        }
+        else
+        {
+            Console.WriteLine($"Error! To remove something from the list \"{args[1]}\" we need both from what language and the word!");
+        }
+        
     }
     else
     {
-        Console.WriteLine("WE didn´t find it :(");
+        Console.WriteLine("Error! No such list exists");
     }
+    
 
 }
 void RunWords()
 {
-    Console.WriteLine($"_CHECK_ Input found: -words = {args[0]}");
-    // -words <listname> <sortByLanguage> 
-    //Listar ord(alla språk) från angiven lista.Om man anger språk sorteras listan efter
-    //det, annars sortera efter första språket. 
+    if (args.Length > 1)
+    {
+        if (CheckIfListExist(args[1]))
+        {
+            string currentListName = args[1];
+            WordList currentWordList = WordList.LoadList(currentListName);
+            if (currentWordList.Count() == 0)
+            {
+                Console.WriteLine($"There are no words in the list \"{currentWordList.Name}\"");
+                return;
+            }
 
-    //if (CheckIfListNameWasSent())
-    //{
-    //    string currentListName = args[1];
-    //    WordList currentWordList = WordList.LoadList(currentListName);
-
-
-    //    int languageToSortBy = CheckIfValidLanguageToSortFrom(currentWordList);
-
-    //    Console.WriteLine($"\n == The List of {args[1]} listed from {currentWordList.Languages[languageToSortBy]}:");
-    //    currentWordList.List(languageToSortBy, PrintTranslations);
-    //}
-    //else
-    //{
-    //    Console.WriteLine("No list name was specified!");
-    //}
-    string currentListName = args[1];
-    WordList currentWordList = WordList.LoadList(currentListName);
-    Console.WriteLine($"\n == The List of {args[1]} listed from {currentWordList.Languages[int.Parse(args[2])]}:");
-    currentWordList.List(int.Parse(args[2]), PrintTranslations);
+            int sortLanguageFrom = 0;
+            if (args.Length > 2)
+            {
+                sortLanguageFrom = currentWordList.Languages.Length > int.Parse(args[2]) ? int.Parse(args[2]) : 0;
+            }
+            Console.WriteLine($"\nThe List \"{args[1]}\" has {currentWordList.Count()} word and is listed from {currentWordList.Languages[sortLanguageFrom]}:");
+            currentWordList.List(sortLanguageFrom, PrintTranslations);
+        }
+        else
+        {
+            Console.WriteLine("Error! No such list exist");
+        }
+    }
+    else
+    {
+        Console.WriteLine("Error! No list name entered.");
+    }
 }
 
-//int CheckIfValidLanguageToSortFrom(WordList myList)
-//{
-//    if (args.Length <= 2)
-//    {
-//        // KOLLA Antal språk som finns och det 
-//        return int.Parse(args[2]);
-//    }
-//    return 0;
-//}
 void RunCount()
 {
     //Console.WriteLine($"_CHECK_ Input found: -count = {args[0]}");
@@ -244,26 +257,38 @@ bool CheckIfListNameWasSent()
 
 void RunPractice()
 {
-    Console.WriteLine($"_CHECK_ Input found: -practice = {args[0]}");
-    //-practice < listname >
-    //Ber användaren översätta ett slumpvis valt ord ur listan från ett slumpvis valt
-    //språk till ett annat. Skriver ut om det var rätt eller fel, och fortsätter fråga efter
-    //ord tills användaren lämnar en tom inmatning. Då skrivs antal övade ord ut, samt
-    //hur stor andel av orden man haft rätt på.
-
-    string currentListName = args[1];
-    WordList currentWordList = WordList.LoadList(currentListName);
-    bool tryAgain = true;
-    while (tryAgain)
+    if (args.Length > 1)
     {
-        GuessTheWORD(currentWordList);
-        Console.WriteLine("\nTry again? 'y' = yes anything else = no");
-        //string inputTryAgain = Console.ReadLine();
-        if (Console.ReadLine() != "y")
+        if (CheckIfListExist(args[1]))
         {
-            tryAgain = false;
+            //-practice < listname >
+            //Ber användaren översätta ett slumpvis valt ord ur listan från ett slumpvis valt
+            //språk till ett annat. Skriver ut om det var rätt eller fel, och fortsätter fråga efter
+            //ord tills användaren lämnar en tom inmatning. Då skrivs antal övade ord ut, samt
+            //hur stor andel av orden man haft rätt på.
+            string currentListName = args[1];
+            WordList currentWordList = WordList.LoadList(currentListName);
+            bool tryAgain = true;
+            while (tryAgain)
+            {
+                GuessTheWORD(currentWordList);
+                Console.WriteLine("\nTry again? 'y' = yes anything else = no");
+                //string inputTryAgain = Console.ReadLine();
+                if (Console.ReadLine() != "y")
+                {
+                    tryAgain = false;
+                }
+            }
+        }
+        else
+        {
+            Console.WriteLine("Error! No such list exists!");
         }
     }
+    else
+    {
+        Console.WriteLine("Error! Need to give a name of List to practice!");
+    } 
 }
 
 void GuessTheWORD(WordList myList)

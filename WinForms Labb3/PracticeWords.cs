@@ -78,6 +78,7 @@ namespace WinForms_Labb3
         private void button_Main_Click(object sender, EventArgs e)
         {
             Parentform?.RunList();
+            textBoxInputWord.Text = "";
         }
 
         private void PracticeWords_Load(object sender, EventArgs e)
@@ -134,7 +135,11 @@ namespace WinForms_Labb3
         {
             if (e.KeyCode == Keys.Enter)
             {
-                CheckSubmit();
+                e.SuppressKeyPress = true;
+                if (textBoxInputWord.Text != "")
+                {
+                    CheckSubmit();
+                }
             }
         }
 
