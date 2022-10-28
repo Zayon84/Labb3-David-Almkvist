@@ -12,9 +12,16 @@ namespace WinForms_Labb3
 {
     public partial class PracticeWords : UserControl
     {
+        public Form1 Parentform { get; set; }
+
         public PracticeWords()
         {
             InitializeComponent();
+        }
+
+        private void button_Main_Click(object sender, EventArgs e)
+        {
+            Parentform?.RunList();
         }
     }
 }

@@ -13,20 +13,30 @@ namespace WinForms_Labb3
             InitializeComponent();
 
             userControl11.Parentform = this;
+            practiceWords1.Parentform = this;
+            
            
         }
 
-        //public static void SetValidList(bool isListValid)
-        //{
-        //    CheckListIfValid(isListValid);
+        public void RunList()
+        {
+            userControl11.Visible = true;
+            practiceWords1.Visible = false;
 
-        //}
+        }
 
         public void RunPractice()
         {
             userControl11.Visible = false;
             practiceWords1.Visible = true;
+
         }
+
+        public void RunAddWord()
+        {
+
+        }
+
         public  void CheckListIfValid(bool isValidList)
         {
 
@@ -40,6 +50,10 @@ namespace WinForms_Labb3
             removeToolStripMenuItem.Enabled = isValidList;
         }
 
+        private void newWordControl1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

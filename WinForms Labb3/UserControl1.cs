@@ -40,13 +40,6 @@ namespace WinForms_Labb3
                 listBoxWordlist.Items.Add(" - No list found -");
                 listBoxLanguages.Items.Add(" - No language found -");
 
-                //practiceToolStripMenuItem.Enabled = false;
-                //addToolStripMenuItem.Enabled = false;
-                //countToolStripMenuItem.Enabled = false;
-                //wordsToolStripMenuItem.Enabled = false;
-                //listsToolStripMenuItem.Enabled = false;
-                //removeToolStripMenuItem.Enabled = false;
-                //Form1.IsListValid = false;
                 Parentform?.CheckListIfValid(false);
 
                 button_Edit.Enabled = false;
@@ -81,14 +74,6 @@ namespace WinForms_Labb3
             }
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //if (Mylists.Length != 0)
-            //{
-            //    UpdateLanguages(WordList.LoadList(listBoxWordlist.SelectedItem.ToString()));
-            //}
-        }
-
         private void UserControl1_Load(object sender, EventArgs e)
         {
             LoadInStart();
@@ -104,6 +89,7 @@ namespace WinForms_Labb3
         private void button_NewList_Click(object sender, EventArgs e)
         {
 
+
         }
 
         private void button_Edit_Click(object sender, EventArgs e)
@@ -111,29 +97,5 @@ namespace WinForms_Labb3
 
         }
 
-        private void labelLanguages_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBoxLanguages_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label_WordLists_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
