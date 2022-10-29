@@ -33,6 +33,12 @@ namespace Word_Library
             string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             //Console.WriteLine(path);
             string fullPath = Path.Combine(path, "Labb3");
+
+            if (!Directory.Exists(fullPath))
+            {
+                DirectoryInfo myDirectory = Directory.CreateDirectory(fullPath);
+            }
+
             //Console.WriteLine(fullPath);
             string[] files = Directory.GetFiles(fullPath, "*.dat");
 
@@ -68,6 +74,13 @@ namespace Word_Library
             // Sparar listan till en fil med samma namn som listan och filändelse.dat
             string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             string fullPath = Path.Combine(path, "Labb3", this.Name + ".dat");
+
+
+            if (!Directory.Exists(Path.Combine(path, "Labb3")))
+            {
+                DirectoryInfo myDirectory = Directory.CreateDirectory(Path.Combine(path, "Labb3"));
+            }
+            
 
             using (StreamWriter writer = new StreamWriter(fullPath))
             {
