@@ -14,7 +14,7 @@ namespace WinForms_Labb3
 {
     public partial class PracticeWords : UserControl
     {
-        public Form1 Parentform { get; set; }
+        public MainForm Parentform { get; set; }
 
         public WordList CurrentWordList { get { return Parentform?.CurrentList; } }
         public Word WordToPractice { get; set; }

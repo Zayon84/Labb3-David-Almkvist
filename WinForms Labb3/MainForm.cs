@@ -4,12 +4,13 @@ using Word_Library;
 
 namespace WinForms_Labb3
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
 
         public  bool IsListValid { get; set; }
         public WordList CurrentList { get; set; }
-        public Form1()
+
+        public MainForm()
         {
             InitializeComponent();
 
@@ -43,9 +44,9 @@ namespace WinForms_Labb3
 
         }
 
-        public void RunAddWord()
+        public void RunAddWord(WordList currentList)
         {
-
+            CurrentList = currentList;
         }
 
         public  void CheckListIfValid(bool isValidList)
@@ -70,6 +71,11 @@ namespace WinForms_Labb3
         private void practiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RunPractice();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 

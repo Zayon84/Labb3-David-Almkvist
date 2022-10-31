@@ -1,6 +1,6 @@
 ﻿namespace WinForms_Labb3
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -53,8 +53,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(978, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(685, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -72,74 +71,76 @@
             this.toolStripSeparator2,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
-            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "&File";
             // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newToolStripMenuItem.Text = "New";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(175, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // listsToolStripMenuItem
             // 
             this.listsToolStripMenuItem.Name = "listsToolStripMenuItem";
-            this.listsToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
+            this.listsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listsToolStripMenuItem.Text = "Lists";
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addToolStripMenuItem.Text = "Add";
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             // 
             // wordsToolStripMenuItem
             // 
             this.wordsToolStripMenuItem.Name = "wordsToolStripMenuItem";
-            this.wordsToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
+            this.wordsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.wordsToolStripMenuItem.Text = "Words";
             // 
             // countToolStripMenuItem
             // 
             this.countToolStripMenuItem.Name = "countToolStripMenuItem";
-            this.countToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
+            this.countToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.countToolStripMenuItem.Text = "Count";
             // 
             // practiceToolStripMenuItem
             // 
             this.practiceToolStripMenuItem.Name = "practiceToolStripMenuItem";
-            this.practiceToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
+            this.practiceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.practiceToolStripMenuItem.Text = "Practice";
             this.practiceToolStripMenuItem.Click += new System.EventHandler(this.practiceToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(175, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(178, 34);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // panelStart
             // 
             this.panelStart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelStart.Location = new System.Drawing.Point(0, 35);
+            this.panelStart.Location = new System.Drawing.Point(0, 24);
+            this.panelStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelStart.Name = "panelStart";
-            this.panelStart.Size = new System.Drawing.Size(978, 409);
+            this.panelStart.Size = new System.Drawing.Size(685, 242);
             this.panelStart.TabIndex = 6;
             // 
             // practiceWords1
@@ -167,16 +168,15 @@
             this.userControl11.Size = new System.Drawing.Size(1143, 508);
             this.userControl11.TabIndex = 0;
             // 
-            // Form1
+            // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 444);
+            this.ClientSize = new System.Drawing.Size(685, 266);
             this.Controls.Add(this.panelStart);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Labb 3 WordList ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);

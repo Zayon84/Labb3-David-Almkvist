@@ -34,7 +34,7 @@
             this.numericUpDownNrOfLanguages = new System.Windows.Forms.NumericUpDown();
             this.buttonConfirm = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxLanguages = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNrOfLanguages)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,6 +93,7 @@
             this.buttonConfirm.TabIndex = 4;
             this.buttonConfirm.Text = "Confirm";
             this.buttonConfirm.UseVisualStyleBackColor = true;
+            this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
             // buttonCancel
             // 
@@ -104,21 +105,21 @@
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textBoxLanguages
             // 
-            this.textBox1.Location = new System.Drawing.Point(91, 101);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(106, 29);
-            this.textBox1.TabIndex = 6;
+            this.textBoxLanguages.Location = new System.Drawing.Point(91, 101);
+            this.textBoxLanguages.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxLanguages.Multiline = true;
+            this.textBoxLanguages.Name = "textBoxLanguages";
+            this.textBoxLanguages.Size = new System.Drawing.Size(93, 29);
+            this.textBoxLanguages.TabIndex = 6;
             // 
             // CreateNewListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(307, 302);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxLanguages);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonConfirm);
             this.Controls.Add(this.numericUpDownNrOfLanguages);
@@ -142,6 +143,6 @@
         private NumericUpDown numericUpDownNrOfLanguages;
         private Button buttonConfirm;
         private Button buttonCancel;
-        private TextBox textBox1;
+        private TextBox textBoxLanguages;
     }
 }

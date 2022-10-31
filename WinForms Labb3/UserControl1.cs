@@ -14,7 +14,7 @@ namespace WinForms_Labb3
     public partial class UserControl1 : UserControl
     {
         
-        public Form1 Parentform { get; set; }
+        public MainForm Parentform { get; set; }
         public string[] Mylists { get { return WordList.GetLists(); } }
 
         public UserControl1()
