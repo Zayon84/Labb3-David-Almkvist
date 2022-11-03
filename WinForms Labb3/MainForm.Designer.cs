@@ -77,60 +77,60 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.newToolStripMenuItem.Text = "New";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(114, 6);
             // 
             // listsToolStripMenuItem
             // 
             this.listsToolStripMenuItem.Name = "listsToolStripMenuItem";
-            this.listsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listsToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.listsToolStripMenuItem.Text = "Lists";
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.addToolStripMenuItem.Text = "Add";
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             // 
             // wordsToolStripMenuItem
             // 
             this.wordsToolStripMenuItem.Name = "wordsToolStripMenuItem";
-            this.wordsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.wordsToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.wordsToolStripMenuItem.Text = "Words";
             // 
             // countToolStripMenuItem
             // 
             this.countToolStripMenuItem.Name = "countToolStripMenuItem";
-            this.countToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.countToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.countToolStripMenuItem.Text = "Count";
             // 
             // practiceToolStripMenuItem
             // 
             this.practiceToolStripMenuItem.Name = "practiceToolStripMenuItem";
-            this.practiceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.practiceToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.practiceToolStripMenuItem.Text = "Practice";
             this.practiceToolStripMenuItem.Click += new System.EventHandler(this.practiceToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(114, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -138,9 +138,9 @@
             // 
             this.panelStart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelStart.Location = new System.Drawing.Point(0, 24);
-            this.panelStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelStart.Margin = new System.Windows.Forms.Padding(2);
             this.panelStart.Name = "panelStart";
-            this.panelStart.Size = new System.Drawing.Size(685, 242);
+            this.panelStart.Size = new System.Drawing.Size(685, 287);
             this.panelStart.TabIndex = 6;
             // 
             // practiceWords1
@@ -172,7 +172,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(685, 266);
+            this.ClientSize = new System.Drawing.Size(685, 311);
             this.Controls.Add(this.panelStart);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

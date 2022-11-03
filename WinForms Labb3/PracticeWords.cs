@@ -84,13 +84,13 @@ namespace WinForms_Labb3
         private void PracticeWords_Load(object sender, EventArgs e)
         {
             SetCurrentList();
-
         }
 
         private void PracticeWords_VisibleChanged(object sender, EventArgs e)
         {
             UpdateScreen();
             ResetScore();
+            textBoxInputWord.Focus();
         }
 
         private void UpdateScreen()

@@ -29,9 +29,7 @@ namespace Word_Library
 
         public static string[] GetLists()
         {
-            //Returnerar array med namn på alla listor som finns lagrade(utan filändelsen). 
             string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            //Console.WriteLine(path);
             string fullPath = Path.Combine(path, "Labb3");
 
             if (!Directory.Exists(fullPath))
@@ -39,7 +37,6 @@ namespace Word_Library
                 DirectoryInfo myDirectory = Directory.CreateDirectory(fullPath);
             }
 
-            //Console.WriteLine(fullPath);
             string[] files = Directory.GetFiles(fullPath, "*.dat");
 
             string[] lists = files.Select(file => Path.GetFileNameWithoutExtension(file)).ToArray();
@@ -48,11 +45,8 @@ namespace Word_Library
 
         public static WordList LoadList(string name)
         {
-            // Laddar in ordlistan(name anges utan filändelse) och returnerar som WordList.
             string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             string fullPath = Path.Combine(path, "Labb3",name + ".dat");
-            //Console.WriteLine("File in path " + fullPath);
-
 
             using (StreamReader reader = new StreamReader(fullPath))
             {
@@ -71,7 +65,6 @@ namespace Word_Library
 
         public void Save()
         {
-            // Sparar listan till en fil med samma namn som listan och filändelse.dat
             string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             string fullPath = Path.Combine(path, "Labb3", this.Name + ".dat");
 
@@ -95,7 +88,6 @@ namespace Word_Library
 
         public void Add(params string[] translations)
         {
-            //Lägger till ord i listan.Kasta ArgumentException om det är fel antal translations.
             if (translations.Count() != Languages.Count())
             {
                 throw new ArgumentException("Number of translations does not match number of Languages");
@@ -103,10 +95,9 @@ namespace Word_Library
 
             myWordsList.Add(new Word(translations));
         }
+
         public bool Remove(int translation, string word)
         {
-            //translation motsvarar index i Languages.Sök igenom språket och ta bort ordet.
-            //Returnerar true om ordet fanns(och alltså tagits bort), annars false.
             foreach (Word currentWord in myWordsList)
             {
                 if (currentWord.Translations[translation] == word)
@@ -120,14 +111,11 @@ namespace Word_Library
 
         public int Count()
         {
-            //Räknar och returnerar antal ord i listan.
             return myWordsList.Count;
         }
 
         public void List(int sortByTranslation, Action<string[]> showTranslations)
         {
-            //sortByTranslation = Vilket språk listan ska sorteras på.
-            //showTranslations = Callback som anropas för varje ord i listan.
             List<Word> sortedList = myWordsList.OrderBy(w => w.Translations[sortByTranslation]).ToList();
 
             foreach (Word currentWord in sortedList)
@@ -138,11 +126,8 @@ namespace Word_Library
 
         public Word GetWordToPractice()
         {
-            //Returnerar slumpmässigt Word från listan, med slumpmässigt valda
-            //FromLanguage och ToLanguage(dock inte samma). 
-
             Random rand = new Random();
-            int choosenWordIndex = rand.Next(0, myWordsList.Count);                             // TODO: Refacor to proper words
+            int choosenWordIndex = rand.Next(0, myWordsList.Count); 
 
             int toLanguage = rand.Next(Languages.Length);
             int fromLanguage = rand.Next(Languages.Length);
@@ -152,11 +137,11 @@ namespace Word_Library
                     fromLanguage = rand.Next(Languages.Length);
                 }
 
-            Word theChoosenOne = myWordsList[choosenWordIndex];
+            Word wordToPractice = myWordsList[choosenWordIndex];
 
-            theChoosenOne = new Word(fromLanguage,toLanguage,theChoosenOne.Translations);
+            wordToPractice = new Word(fromLanguage,toLanguage,wordToPractice.Translations);
 
-            return theChoosenOne;
+            return wordToPractice;
         }
 
     }
