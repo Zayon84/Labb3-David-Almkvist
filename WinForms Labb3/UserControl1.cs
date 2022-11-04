@@ -77,8 +77,17 @@ namespace WinForms_Labb3
             {
                 Parentform.CurrentList = (WordList.LoadList(listBoxWordlist.SelectedItem.ToString()));
 
+                DisablePracticeIfNoWords();
+
                 UpdateLanguages(WordList.LoadList(listBoxWordlist.SelectedItem.ToString()));
             }
+        }
+
+        private void DisablePracticeIfNoWords()
+        {
+            bool showPracticeButtons = Parentform.CurrentList.Count() == 0 ? false : true;
+            button_Practice.Enabled = showPracticeButtons;
+            Parentform.SetPracticeMenu(showPracticeButtons);
         }
 
         private void UserControl1_Load(object sender, EventArgs e)

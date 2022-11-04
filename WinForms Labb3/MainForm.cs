@@ -51,15 +51,17 @@ namespace WinForms_Labb3
 
         public  void CheckListIfValid(bool isValidList)
         {
-
-            //bool isValidList = true;
-
             practiceToolStripMenuItem.Enabled = isValidList;
             addToolStripMenuItem.Enabled = isValidList;
             countToolStripMenuItem.Enabled = isValidList;
             wordsToolStripMenuItem.Enabled = isValidList;
             listsToolStripMenuItem.Enabled = isValidList;
             removeToolStripMenuItem.Enabled = isValidList;
+        }
+
+        public void SetPracticeMenu(bool hasWords)
+        {
+            practiceToolStripMenuItem.Enabled = hasWords;
         }
 
         private void Form1_Load(object sender, EventArgs e)
