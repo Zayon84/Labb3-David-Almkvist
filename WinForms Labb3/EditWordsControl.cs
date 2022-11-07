@@ -28,5 +28,10 @@ namespace WinForms_Labb3
         {
             Parentform?.RunList();
         }
+
+        private void EditWordsControl_VisibleChanged(object sender, EventArgs e)
+        {
+            labelTitle.Text = "Edit the List: " + Parentform?.CurrentList.Name;
+        }
     }
 }

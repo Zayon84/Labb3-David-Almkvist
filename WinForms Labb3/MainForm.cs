@@ -62,11 +62,10 @@ namespace WinForms_Labb3
         public  void CheckListIfValid(bool isValidList)
         {
             practiceToolStripMenuItem.Enabled = isValidList;
-            addToolStripMenuItem.Enabled = isValidList;
+            EditToolStripMenuItem.Enabled = isValidList;
             countToolStripMenuItem.Enabled = isValidList;
             wordsToolStripMenuItem.Enabled = isValidList;
             listsToolStripMenuItem.Enabled = isValidList;
-            removeToolStripMenuItem.Enabled = isValidList;
         }
 
         public void SetPracticeMenu(bool hasWords)
@@ -98,6 +97,11 @@ namespace WinForms_Labb3
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RunNew();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RunAddWord();
         }
     }
 

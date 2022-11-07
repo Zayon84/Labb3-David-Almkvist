@@ -62,6 +62,7 @@
             this.Controls.Add(this.labelTitle);
             this.Name = "EditWordsControl";
             this.Size = new System.Drawing.Size(700, 300);
+            this.VisibleChanged += new System.EventHandler(this.EditWordsControl_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

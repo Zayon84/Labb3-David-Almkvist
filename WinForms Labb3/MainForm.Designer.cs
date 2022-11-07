@@ -33,8 +33,7 @@
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.listsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.countToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.practiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,8 +64,7 @@
             this.newToolStripMenuItem,
             this.toolStripSeparator1,
             this.listsToolStripMenuItem,
-            this.addToolStripMenuItem,
-            this.removeToolStripMenuItem,
+            this.EditToolStripMenuItem,
             this.wordsToolStripMenuItem,
             this.countToolStripMenuItem,
             this.practiceToolStripMenuItem,
@@ -97,15 +95,10 @@
             // 
             // addToolStripMenuItem
             // 
-            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.addToolStripMenuItem.Text = "Add";
-            // 
-            // removeToolStripMenuItem
-            // 
-            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.removeToolStripMenuItem.Text = "Remove";
+            this.EditToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.EditToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.EditToolStripMenuItem.Text = "Edit";
+            this.EditToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // wordsToolStripMenuItem
             // 
@@ -210,8 +203,7 @@
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem newToolStripMenuItem;
         private ToolStripMenuItem listsToolStripMenuItem;
-        private ToolStripMenuItem addToolStripMenuItem;
-        private ToolStripMenuItem removeToolStripMenuItem;
+        private ToolStripMenuItem EditToolStripMenuItem;
         private ToolStripMenuItem wordsToolStripMenuItem;
         private ToolStripMenuItem countToolStripMenuItem;
         private ToolStripMenuItem practiceToolStripMenuItem;
