@@ -77,6 +77,8 @@ namespace WinForms_Labb3
             {
                 Parentform.CurrentList = (WordList.LoadList(listBoxWordlist.SelectedItem.ToString()));
 
+                wordListCountLabel.Text = $"Word count: {Parentform.CurrentList.Count()}";
+
                 DisablePracticeIfNoWords();
 
                 UpdateLanguages(WordList.LoadList(listBoxWordlist.SelectedItem.ToString()));

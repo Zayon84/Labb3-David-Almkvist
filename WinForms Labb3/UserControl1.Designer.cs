@@ -37,13 +37,13 @@
             this.label_WordLists = new System.Windows.Forms.Label();
             this.listBoxWordlist = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.TEST_LABEL_INFO = new System.Windows.Forms.Label();
+            this.wordListCountLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button_Practice
             // 
             this.button_Practice.Location = new System.Drawing.Point(548, 186);
-            this.button_Practice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_Practice.Margin = new System.Windows.Forms.Padding(2);
             this.button_Practice.Name = "button_Practice";
             this.button_Practice.Size = new System.Drawing.Size(122, 47);
             this.button_Practice.TabIndex = 21;
@@ -54,7 +54,7 @@
             // button_NewList
             // 
             this.button_NewList.Location = new System.Drawing.Point(548, 84);
-            this.button_NewList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_NewList.Margin = new System.Windows.Forms.Padding(2);
             this.button_NewList.Name = "button_NewList";
             this.button_NewList.Size = new System.Drawing.Size(122, 47);
             this.button_NewList.TabIndex = 20;
@@ -65,7 +65,7 @@
             // button_Edit
             // 
             this.button_Edit.Location = new System.Drawing.Point(548, 135);
-            this.button_Edit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_Edit.Margin = new System.Windows.Forms.Padding(2);
             this.button_Edit.Name = "button_Edit";
             this.button_Edit.Size = new System.Drawing.Size(122, 47);
             this.button_Edit.TabIndex = 19;
@@ -89,7 +89,7 @@
             this.listBoxLanguages.FormattingEnabled = true;
             this.listBoxLanguages.ItemHeight = 15;
             this.listBoxLanguages.Location = new System.Drawing.Point(288, 84);
-            this.listBoxLanguages.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxLanguages.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxLanguages.Name = "listBoxLanguages";
             this.listBoxLanguages.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.listBoxLanguages.Size = new System.Drawing.Size(222, 154);
@@ -121,7 +121,7 @@
             this.listBoxWordlist.FormattingEnabled = true;
             this.listBoxWordlist.ItemHeight = 15;
             this.listBoxWordlist.Location = new System.Drawing.Point(40, 84);
-            this.listBoxWordlist.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxWordlist.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxWordlist.Name = "listBoxWordlist";
             this.listBoxWordlist.Size = new System.Drawing.Size(222, 154);
             this.listBoxWordlist.TabIndex = 14;
@@ -138,20 +138,20 @@
             this.label1.Text = "Practice Words App";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // TEST_LABEL_INFO
+            // wordListCountLabel
             // 
-            this.TEST_LABEL_INFO.AutoSize = true;
-            this.TEST_LABEL_INFO.Location = new System.Drawing.Point(271, 257);
-            this.TEST_LABEL_INFO.Name = "TEST_LABEL_INFO";
-            this.TEST_LABEL_INFO.Size = new System.Drawing.Size(38, 15);
-            this.TEST_LABEL_INFO.TabIndex = 22;
-            this.TEST_LABEL_INFO.Text = "label3";
+            this.wordListCountLabel.AutoSize = true;
+            this.wordListCountLabel.Location = new System.Drawing.Point(180, 67);
+            this.wordListCountLabel.Name = "wordListCountLabel";
+            this.wordListCountLabel.Size = new System.Drawing.Size(82, 15);
+            this.wordListCountLabel.TabIndex = 22;
+            this.wordListCountLabel.Text = "Word count: 0";
             // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.TEST_LABEL_INFO);
+            this.Controls.Add(this.wordListCountLabel);
             this.Controls.Add(this.button_Practice);
             this.Controls.Add(this.button_NewList);
             this.Controls.Add(this.button_Edit);
@@ -161,7 +161,7 @@
             this.Controls.Add(this.label_WordLists);
             this.Controls.Add(this.listBoxWordlist);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserControl1";
             this.Size = new System.Drawing.Size(700, 300);
             this.Load += new System.EventHandler(this.UserControl1_Load);
@@ -181,6 +181,6 @@
         private Label label_WordLists;
         private ListBox listBoxWordlist;
         private Label label1;
-        private Label TEST_LABEL_INFO;
+        private Label wordListCountLabel;
     }
 }
