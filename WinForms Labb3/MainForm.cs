@@ -9,6 +9,7 @@ namespace WinForms_Labb3
 
         public  bool IsListValid { get; set; }
         public WordList CurrentList { get; set; }
+        public static WordList CurrentListStatic { get; set; }
 
         public MainForm()
         {
@@ -17,8 +18,6 @@ namespace WinForms_Labb3
             userControl11.Parentform = this;
             practiceWords1.Parentform = this;
             editWordsControl1.Parentform = this;
-            
-           
         }
 
         public void SetCurrentList(WordList myList)
@@ -36,7 +35,7 @@ namespace WinForms_Labb3
             userControl11.Visible = true;
             practiceWords1.Visible = false;
             editWordsControl1.Visible = false;
-
+            userControl11.LoadInStart();
         }
 
         public void RunPractice()
@@ -51,7 +50,7 @@ namespace WinForms_Labb3
             userControl11.Visible = false;
             practiceWords1.Visible = false;
             editWordsControl1.Visible = true;
-            editWordsControl1.AddColoums();
+            editWordsControl1.AddDataGridView();
         }
 
         public void RunAddWord(WordList currentList)

@@ -23,7 +23,7 @@ namespace WinForms_Labb3
 
         }
 
-        private void LoadInStart()
+        public void LoadInStart()
         {
             if (CheckForValidList())
             {

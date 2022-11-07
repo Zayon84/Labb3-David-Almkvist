@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Word_Library;
 
 namespace WinForms_Labb3
 {
@@ -19,7 +20,7 @@ namespace WinForms_Labb3
             InitializeComponent();
         }
 
-        public void AddColoums()
+        public void AddDataGridView()
         {
             dataGridView1.DataSource = null;
             using (DataTable dataTable = new DataTable("Categories"))
@@ -32,9 +33,25 @@ namespace WinForms_Labb3
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dataGridView1.DataSource = dataTable;
 
-                if (Parentform?.CurrentList.Count() != 0)
+                WordList? currentWordList = Parentform?.CurrentList;
+                if (currentWordList.Count() != 0)
                 {
-                    // TODO: add words in
+                    currentWordList.List(0, GetTranslations);
+
+                }
+
+                void GetTranslations(string[] translations)
+                {
+                    int currentColoums = currentWordList.Languages.Length;
+
+                    string[] test = new string[currentColoums];
+                    int currentIndex = 0;
+                    foreach (string currentWord in translations)
+                    {
+                        test[currentIndex] = currentWord;
+                        currentIndex++;
+                    }
+                    dataTable.Rows.Add(test );
                 }
             }
         }
@@ -51,7 +68,7 @@ namespace WinForms_Labb3
 
         private void EditWordsControl_Load(object sender, EventArgs e)
         {
-            AddColoums();
+            AddDataGridView();
 
         }
     }

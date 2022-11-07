@@ -45,7 +45,8 @@ namespace WinForms_Labb3
             WordList newWordList = new WordList(textBoxListName.Text, textBoxLanguages.Lines.ToArray());
             newWordList.Save();
 
-            Parentform?.RunAddWord(newWordList);
+            //Parentform?.RunAddWord(newWordList);
+            MainForm.CurrentListStatic = newWordList;
 
             this.Close();
         }
