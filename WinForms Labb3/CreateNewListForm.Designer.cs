@@ -32,7 +32,7 @@
             this.textBoxListName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDownNrOfLanguages = new System.Windows.Forms.NumericUpDown();
-            this.buttonConfirm = new System.Windows.Forms.Button();
+            this.buttonCreate = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.textBoxLanguages = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNrOfLanguages)).BeginInit();
@@ -84,16 +84,16 @@
             0,
             0});
             // 
-            // buttonConfirm
+            // buttonCreate
             // 
-            this.buttonConfirm.Location = new System.Drawing.Point(218, 258);
-            this.buttonConfirm.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonConfirm.Name = "buttonConfirm";
-            this.buttonConfirm.Size = new System.Drawing.Size(78, 20);
-            this.buttonConfirm.TabIndex = 4;
-            this.buttonConfirm.Text = "Confirm";
-            this.buttonConfirm.UseVisualStyleBackColor = true;
-            this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
+            this.buttonCreate.Location = new System.Drawing.Point(218, 258);
+            this.buttonCreate.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCreate.Name = "buttonCreate";
+            this.buttonCreate.Size = new System.Drawing.Size(78, 20);
+            this.buttonCreate.TabIndex = 4;
+            this.buttonCreate.Text = "Create";
+            this.buttonCreate.UseVisualStyleBackColor = true;
+            this.buttonCreate.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
             // buttonCancel
             // 
@@ -121,7 +121,7 @@
             this.ClientSize = new System.Drawing.Size(307, 302);
             this.Controls.Add(this.textBoxLanguages);
             this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonConfirm);
+            this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.numericUpDownNrOfLanguages);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxListName);
@@ -141,7 +141,7 @@
         private TextBox textBoxListName;
         private Label label1;
         private NumericUpDown numericUpDownNrOfLanguages;
-        private Button buttonConfirm;
+        private Button buttonCreate;
         private Button buttonCancel;
         private TextBox textBoxLanguages;
     }
