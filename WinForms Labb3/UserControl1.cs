@@ -56,9 +56,9 @@ namespace WinForms_Labb3
             {
                 listBoxWordlist.Items.Add(name);
             }
-            if (listBoxWordlist.SelectedIndex == null)
-            {
-            }
+            //if (listBoxWordlist.SelectedIndex == null)
+            //{
+            //}
             listBoxWordlist.SelectedIndex = 0;
 
         }
@@ -109,7 +109,7 @@ namespace WinForms_Labb3
 
         private void button_Edit_Click(object sender, EventArgs e)
         {
-
+            Parentform?.RunAddWord();
         }
     }
 }

@@ -16,6 +16,7 @@ namespace WinForms_Labb3
 
             userControl11.Parentform = this;
             practiceWords1.Parentform = this;
+            editWordsControl1.Parentform = this;
             
            
         }
@@ -34,6 +35,7 @@ namespace WinForms_Labb3
         {
             userControl11.Visible = true;
             practiceWords1.Visible = false;
+            editWordsControl1.Visible = false;
 
         }
 
@@ -41,12 +43,20 @@ namespace WinForms_Labb3
         {
             userControl11.Visible = false;
             practiceWords1.Visible = true;
+            editWordsControl1.Visible = false;
+        }
 
+        public void RunAddWord()
+        {
+            userControl11.Visible = false;
+            practiceWords1.Visible = false;
+            editWordsControl1.Visible = true;
         }
 
         public void RunAddWord(WordList currentList)
         {
             CurrentList = currentList;
+            RunAddWord();
         }
 
         public  void CheckListIfValid(bool isValidList)
@@ -70,6 +80,11 @@ namespace WinForms_Labb3
             this.panelStart.Controls.Add(this.userControl11);
         }
 
+        private void listsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RunList();
+        }
+
         private void practiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RunPractice();
@@ -78,6 +93,11 @@ namespace WinForms_Labb3
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RunNew();
         }
     }
 

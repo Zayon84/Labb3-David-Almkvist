@@ -41,9 +41,11 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelStart = new System.Windows.Forms.Panel();
+            this.editWordsControl1 = new WinForms_Labb3.EditWordsControl();
             this.practiceWords1 = new WinForms_Labb3.PracticeWords();
             this.userControl11 = new WinForms_Labb3.UserControl1();
             this.menuStrip1.SuspendLayout();
+            this.panelStart.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -77,71 +79,85 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(114, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // listsToolStripMenuItem
             // 
             this.listsToolStripMenuItem.Name = "listsToolStripMenuItem";
-            this.listsToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.listsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listsToolStripMenuItem.Text = "Lists";
+            this.listsToolStripMenuItem.Click += new System.EventHandler(this.listsToolStripMenuItem_Click);
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addToolStripMenuItem.Text = "Add";
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             // 
             // wordsToolStripMenuItem
             // 
             this.wordsToolStripMenuItem.Name = "wordsToolStripMenuItem";
-            this.wordsToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.wordsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.wordsToolStripMenuItem.Text = "Words";
             // 
             // countToolStripMenuItem
             // 
             this.countToolStripMenuItem.Name = "countToolStripMenuItem";
-            this.countToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.countToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.countToolStripMenuItem.Text = "Count";
             // 
             // practiceToolStripMenuItem
             // 
             this.practiceToolStripMenuItem.Name = "practiceToolStripMenuItem";
-            this.practiceToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.practiceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.practiceToolStripMenuItem.Text = "Practice";
             this.practiceToolStripMenuItem.Click += new System.EventHandler(this.practiceToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(114, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // panelStart
             // 
+            this.panelStart.Controls.Add(this.editWordsControl1);
             this.panelStart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelStart.Location = new System.Drawing.Point(0, 24);
             this.panelStart.Margin = new System.Windows.Forms.Padding(2);
             this.panelStart.Name = "panelStart";
             this.panelStart.Size = new System.Drawing.Size(685, 287);
             this.panelStart.TabIndex = 6;
+            // 
+            // editWordsControl1
+            // 
+            this.editWordsControl1.AutoSize = true;
+            this.editWordsControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.editWordsControl1.Location = new System.Drawing.Point(0, 0);
+            this.editWordsControl1.Name = "editWordsControl1";
+            this.editWordsControl1.Parentform = null;
+            this.editWordsControl1.Size = new System.Drawing.Size(685, 287);
+            this.editWordsControl1.TabIndex = 0;
+            this.editWordsControl1.Visible = false;
             // 
             // practiceWords1
             // 
@@ -181,6 +197,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panelStart.ResumeLayout(false);
+            this.panelStart.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,5 +221,6 @@
         private Panel panelStart;
         private UserControl1 userControl11;
         private PracticeWords practiceWords1;
+        private EditWordsControl editWordsControl1;
     }
 }

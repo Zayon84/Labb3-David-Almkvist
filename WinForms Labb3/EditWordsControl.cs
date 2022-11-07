@@ -12,6 +12,8 @@ namespace WinForms_Labb3
 {
     public partial class EditWordsControl : UserControl
     {
+        public MainForm Parentform { get; set; }
+
         public EditWordsControl()
         {
             InitializeComponent();
@@ -20,6 +22,11 @@ namespace WinForms_Labb3
         private void labelTitle_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FinishEditingButton_Click(object sender, EventArgs e)
+        {
+            Parentform?.RunList();
         }
     }
 }
