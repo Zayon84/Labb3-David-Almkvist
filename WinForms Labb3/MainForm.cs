@@ -51,6 +51,7 @@ namespace WinForms_Labb3
             userControl11.Visible = false;
             practiceWords1.Visible = false;
             editWordsControl1.Visible = true;
+            editWordsControl1.AddColoums();
         }
 
         public void RunAddWord(WordList currentList)

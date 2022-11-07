@@ -19,8 +19,9 @@ namespace WinForms_Labb3
             InitializeComponent();
         }
 
-        void AddColoums()
+        public void AddColoums()
         {
+            dataGridView1.DataSource = null;
             using (DataTable dataTable = new DataTable("Categories"))
             {
                 foreach (string item in Parentform?.CurrentList.Languages)
