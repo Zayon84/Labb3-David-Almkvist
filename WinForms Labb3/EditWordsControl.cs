@@ -71,5 +71,10 @@ namespace WinForms_Labb3
             AddDataGridView();
 
         }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -65,13 +65,13 @@
             this.dataGridView1.Location = new System.Drawing.Point(13, 28);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(579, 177);
+            this.dataGridView1.Size = new System.Drawing.Size(579, 211);
             this.dataGridView1.TabIndex = 2;
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(13, 211);
+            this.dataGridView2.Location = new System.Drawing.Point(13, 245);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 25;
             this.dataGridView2.Size = new System.Drawing.Size(579, 28);
@@ -79,16 +79,17 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(599, 211);
+            this.buttonAdd.Location = new System.Drawing.Point(599, 245);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(76, 28);
             this.buttonAdd.TabIndex = 4;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonRemove
             // 
-            this.buttonRemove.Location = new System.Drawing.Point(599, 149);
+            this.buttonRemove.Location = new System.Drawing.Point(599, 179);
             this.buttonRemove.Name = "buttonRemove";
             this.buttonRemove.Size = new System.Drawing.Size(76, 28);
             this.buttonRemove.TabIndex = 5;
