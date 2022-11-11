@@ -31,7 +31,11 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.FinishEditingButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonRemove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -47,9 +51,9 @@
             // 
             // FinishEditingButton
             // 
-            this.FinishEditingButton.Location = new System.Drawing.Point(544, 238);
+            this.FinishEditingButton.Location = new System.Drawing.Point(599, 28);
             this.FinishEditingButton.Name = "FinishEditingButton";
-            this.FinishEditingButton.Size = new System.Drawing.Size(111, 41);
+            this.FinishEditingButton.Size = new System.Drawing.Size(67, 103);
             this.FinishEditingButton.TabIndex = 1;
             this.FinishEditingButton.Text = "Done Editing";
             this.FinishEditingButton.UseVisualStyleBackColor = true;
@@ -58,16 +62,46 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 28);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 28);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(632, 177);
+            this.dataGridView1.Size = new System.Drawing.Size(579, 177);
             this.dataGridView1.TabIndex = 2;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(13, 211);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.Size = new System.Drawing.Size(579, 28);
+            this.dataGridView2.TabIndex = 3;
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(599, 211);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(76, 28);
+            this.buttonAdd.TabIndex = 4;
+            this.buttonAdd.Text = "Add";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            // 
+            // buttonRemove
+            // 
+            this.buttonRemove.Location = new System.Drawing.Point(599, 149);
+            this.buttonRemove.Name = "buttonRemove";
+            this.buttonRemove.Size = new System.Drawing.Size(76, 28);
+            this.buttonRemove.TabIndex = 5;
+            this.buttonRemove.Text = "Remove";
+            this.buttonRemove.UseVisualStyleBackColor = true;
             // 
             // EditWordsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonRemove);
+            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.FinishEditingButton);
             this.Controls.Add(this.labelTitle);
@@ -76,6 +110,7 @@
             this.Load += new System.EventHandler(this.EditWordsControl_Load);
             this.VisibleChanged += new System.EventHandler(this.EditWordsControl_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -86,5 +121,8 @@
         private Label labelTitle;
         private Button FinishEditingButton;
         private DataGridView dataGridView1;
+        private DataGridView dataGridView2;
+        private Button buttonAdd;
+        private Button buttonRemove;
     }
 }
