@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.Devices;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,15 +46,32 @@ namespace WinForms_Labb3
                 {
                     int currentColoums = currentWordList.Languages.Length;
 
-                    string[] test = new string[currentColoums];
+                    string[] newWord = new string[currentColoums];
                     int currentIndex = 0;
                     foreach (string currentWord in translations)
                     {
-                        test[currentIndex] = currentWord;
+                        newWord[currentIndex] = currentWord;
                         currentIndex++;
                     }
-                    dataTable.Rows.Add(test );
+                    dataTable.Rows.Add(newWord);
                 }
+            }
+            dataGridView1.ClearSelection();
+        }
+
+        void AddColoums()
+        {
+            dataGridView2.DataSource = null;
+            using (DataTable dataTable = new DataTable("Categories"))
+            {
+                foreach (string item in Parentform?.CurrentList.Languages)
+                {
+                    DataColumn coloumIndex = new DataColumn(item, typeof(string));
+                    dataTable.Columns.Add(coloumIndex);
+                }
+                dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                dataGridView2.DataSource = dataTable;
             }
         }
 
@@ -68,18 +87,44 @@ namespace WinForms_Labb3
 
         private void EditWordsControl_Load(object sender, EventArgs e)
         {
-            AddDataGridView();
+            UpdateListTable();
 
+        }
+
+        void UpdateListTable()
+        {
+            AddDataGridView();
+            AddColoums();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
+            WordList currentList = Parentform.CurrentList;
+            int nrOfLanguages = currentList.Languages.Length;
 
+            string[] words = new string[nrOfLanguages];
+
+            for (int i = 0; i < nrOfLanguages; i++)
+            {
+                words[i] = dataGridView2.CurrentRow.Cells[i].Value.ToString();
+            }
+
+            currentList.Add(words);
+            currentList.Save();
+            UpdateListTable();
         }
+
+        //bool CheckValidWordListName()
+        //{
+        //    return string.IsNullOrWhiteSpace(textBoxName.Text) ? false : true;
+        //}
 
         private void buttonRemove_Click(object sender, EventArgs e)
         {
-
+            // remove from dataGridView1
         }
     }
 }
+
+
+
