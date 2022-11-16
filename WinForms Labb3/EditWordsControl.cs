@@ -76,5 +76,10 @@ namespace WinForms_Labb3
         {
 
         }
+
+        private void buttonRemove_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

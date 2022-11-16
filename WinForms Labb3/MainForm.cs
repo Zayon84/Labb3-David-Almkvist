@@ -18,6 +18,7 @@ namespace WinForms_Labb3
             userControl11.Parentform = this;
             practiceWords1.Parentform = this;
             editWordsControl1.Parentform = this;
+            createNewListController1.Parentform = this;
         }
 
         public void SetCurrentList(WordList myList)
@@ -27,14 +28,17 @@ namespace WinForms_Labb3
 
         public void RunNew()
         {
-            CreateNewListForm newForm = new();
-            DialogResult result = newForm.ShowDialog();
+            userControl11.Visible = false;
+            practiceWords1.Visible = false;
+            editWordsControl1.Visible = false;
+            createNewListController1.Visible = true;
         }
         public void RunList()
         {
             userControl11.Visible = true;
             practiceWords1.Visible = false;
             editWordsControl1.Visible = false;
+            createNewListController1.Visible = false;
             userControl11.LoadInStart();
         }
 
@@ -43,6 +47,7 @@ namespace WinForms_Labb3
             userControl11.Visible = false;
             practiceWords1.Visible = true;
             editWordsControl1.Visible = false;
+            createNewListController1.Visible = false;
         }
 
         public void RunAddWord()
@@ -50,6 +55,7 @@ namespace WinForms_Labb3
             userControl11.Visible = false;
             practiceWords1.Visible = false;
             editWordsControl1.Visible = true;
+            createNewListController1.Visible = false;
             editWordsControl1.AddDataGridView();
         }
 

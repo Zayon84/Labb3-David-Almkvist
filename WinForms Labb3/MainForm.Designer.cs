@@ -43,6 +43,7 @@
             this.editWordsControl1 = new WinForms_Labb3.EditWordsControl();
             this.practiceWords1 = new WinForms_Labb3.PracticeWords();
             this.userControl11 = new WinForms_Labb3.UserControl1();
+            this.createNewListController1 = new WinForms_Labb3.CreateNewListController();
             this.menuStrip1.SuspendLayout();
             this.panelStart.SuspendLayout();
             this.SuspendLayout();
@@ -77,62 +78,63 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(113, 6);
             // 
             // listsToolStripMenuItem
             // 
             this.listsToolStripMenuItem.Name = "listsToolStripMenuItem";
-            this.listsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.listsToolStripMenuItem.Text = "Lists";
             this.listsToolStripMenuItem.Click += new System.EventHandler(this.listsToolStripMenuItem_Click);
             // 
-            // addToolStripMenuItem
+            // EditToolStripMenuItem
             // 
-            this.EditToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.EditToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.EditToolStripMenuItem.Name = "EditToolStripMenuItem";
+            this.EditToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.EditToolStripMenuItem.Text = "Edit";
             this.EditToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // wordsToolStripMenuItem
             // 
             this.wordsToolStripMenuItem.Name = "wordsToolStripMenuItem";
-            this.wordsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.wordsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.wordsToolStripMenuItem.Text = "Words";
             // 
             // countToolStripMenuItem
             // 
             this.countToolStripMenuItem.Name = "countToolStripMenuItem";
-            this.countToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.countToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.countToolStripMenuItem.Text = "Count";
             // 
             // practiceToolStripMenuItem
             // 
             this.practiceToolStripMenuItem.Name = "practiceToolStripMenuItem";
-            this.practiceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.practiceToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.practiceToolStripMenuItem.Text = "Practice";
             this.practiceToolStripMenuItem.Click += new System.EventHandler(this.practiceToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(113, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // panelStart
             // 
+            this.panelStart.Controls.Add(this.createNewListController1);
             this.panelStart.Controls.Add(this.editWordsControl1);
             this.panelStart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelStart.Location = new System.Drawing.Point(0, 24);
@@ -177,6 +179,14 @@
             this.userControl11.Size = new System.Drawing.Size(1143, 508);
             this.userControl11.TabIndex = 0;
             // 
+            // createNewListController1
+            // 
+            this.createNewListController1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.createNewListController1.Location = new System.Drawing.Point(0, 0);
+            this.createNewListController1.Name = "createNewListController1";
+            this.createNewListController1.Size = new System.Drawing.Size(685, 287);
+            this.createNewListController1.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -214,5 +224,6 @@
         private UserControl1 userControl11;
         private PracticeWords practiceWords1;
         private EditWordsControl editWordsControl1;
+        private CreateNewListController createNewListController1;
     }
 }
