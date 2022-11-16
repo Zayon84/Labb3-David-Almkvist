@@ -15,7 +15,7 @@ namespace WinForms_Labb3
     {
         public MainForm Parentform { get; set; }
         public int NrOfLanguages { get; set; }
-        public TextBox[] myTextbox = new TextBox[10];               // TODO: fix to a string array instead?
+        public TextBox[] myTextbox = new TextBox[10];
 
         public CreateNewListController()
         {

@@ -40,10 +40,10 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelStart = new System.Windows.Forms.Panel();
+            this.createNewListController1 = new WinForms_Labb3.CreateNewListController();
             this.editWordsControl1 = new WinForms_Labb3.EditWordsControl();
             this.practiceWords1 = new WinForms_Labb3.PracticeWords();
             this.userControl11 = new WinForms_Labb3.UserControl1();
-            this.createNewListController1 = new WinForms_Labb3.CreateNewListController();
             this.menuStrip1.SuspendLayout();
             this.panelStart.SuspendLayout();
             this.SuspendLayout();
@@ -143,6 +143,17 @@
             this.panelStart.Size = new System.Drawing.Size(685, 287);
             this.panelStart.TabIndex = 6;
             // 
+            // createNewListController1
+            // 
+            this.createNewListController1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.createNewListController1.Location = new System.Drawing.Point(0, 0);
+            this.createNewListController1.Name = "createNewListController1";
+            this.createNewListController1.NrOfLanguages = 2;
+            this.createNewListController1.Parentform = null;
+            this.createNewListController1.Size = new System.Drawing.Size(685, 287);
+            this.createNewListController1.TabIndex = 1;
+            this.createNewListController1.Visible = false;
+            // 
             // editWordsControl1
             // 
             this.editWordsControl1.AutoSize = true;
@@ -178,14 +189,6 @@
             this.userControl11.Parentform = null;
             this.userControl11.Size = new System.Drawing.Size(1143, 508);
             this.userControl11.TabIndex = 0;
-            // 
-            // createNewListController1
-            // 
-            this.createNewListController1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.createNewListController1.Location = new System.Drawing.Point(0, 0);
-            this.createNewListController1.Name = "createNewListController1";
-            this.createNewListController1.Size = new System.Drawing.Size(685, 287);
-            this.createNewListController1.TabIndex = 1;
             // 
             // MainForm
             // 
